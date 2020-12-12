@@ -1,42 +1,40 @@
 import React from 'react';
+import { nav } from './js/utils';
+import './css/navbar/index.css';
 
-
-const
-   item = 'nav-item',
-   brand = 'navbar-brand';
 
 class Navbar extends React.Component {
    render() {
       return (
-         <nav className='navbar navbar-expand-sm bg-dark navbar-dark justify-content-center'>
+         <nav className='navbar navbar-expand-sm bg-dark navbar-dark navbar-custom justify-content-center'>
             <ul className='navbar-nav'>
-               <li className={item}>
-                  <a href='/' className={brand}>
+               <li className={nav.item}>
+                  <a href='/' className={nav.brand}>
                      Home
                   </a>
                </li>
-               <li className={item}>
-                  <a href='/form' className={brand}>
+               <li className={nav.item}>
+                  <a href='/' className={nav.brand}>
                      Fonti
                   </a>
                </li>
-               <li className={item}>
-                  <a href='/table' className={brand}>
+               <li className={nav.item}>
+                  <a href='/' className={nav.brand}>
                      Table
                   </a>
                </li>
-               <li className={item}>
-                  <a href='/chart' className={brand}>
+               <li className={nav.item}>
+                  <a href='/' className={nav.brand}>
                      Altro
                   </a>
                </li>
-               <li className={item}>
-                  <a href='/calendar' className={brand}>
+               <li className={nav.item}>
+                  <a href='/' className={nav.brand}>
                      Calendar
                   </a>
                </li>
-               <li className={item}>
-                  <a href='/map' className={brand}>
+               <li className={nav.item}>
+                  <a href='/' className={nav.brand}>
                      About
                   </a>
                </li>

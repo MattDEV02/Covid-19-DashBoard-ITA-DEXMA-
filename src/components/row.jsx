@@ -1,20 +1,24 @@
 import React from 'react';
+import { formatData } from './js/utils';
+import './css/index.css';
 
 class Row extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <tr className='border border-dark'>
-                <td>{this.props.data.data}</td>
-                <td>{this.props.data.nuovi_positivi}</td>
-                <td>{this.props.data.tamponi}</td>
-                <td>{this.props.data.deceduti}</td>
-                <td>{this.props.data.dimessi_guariti}</td>
-            </tr>
-        );
-    }
+   constructor(props) {
+      super(props);
+   }
+   render() {
+      const covid19 = this.props.covid19;
+      const data = formatData(covid19.data);
+      return (
+         <tr key={data}>
+            <td>{data}</td>
+            <td>{covid19.nuovi_positivi}</td>
+            <td>{covid19.tamponi}</td>
+            <td>{covid19.deceduti}</td>
+            <td>{covid19.dimessi_guariti}</td>
+         </tr>
+      );
+   }
 }
 
 export default Row;

@@ -1,0 +1,10 @@
+$pad: 0.7rem;
+$darkblue: #00008b;
+
+li {
+    padding: $pad $pad ($pad - 0.2) $pad;
+}
+
+li:hover {
+    background-color: $darkblue;
+}

@@ -7,35 +7,35 @@ import endPoint from './js/utils';
 import './css/index.css';
 
 
-let data;
+let covid19;
 class App extends React.Component {
    constructor() {
       super();
-      this.state = { data: null };
+      this.state = { covid19: null };
    }
    componentDidMount() {
       axios.get(endPoint)
-         .then(response => data = response.data)
+         .then(response => covid19 = response.data)
          .catch(error => console.error(error))
-         .then(() => this.getData(data));
+         .then(() => this.getCovid19(covid19));
    }
    render() {
       return (
          <React.StrictMode>
             <Navbar />
             <div className='container-fluid'>
-               <div className='row justify-content-center'>
+               <div className='row justify-content-center mt-3'>
                   {
-                     this.state.data ? <TableData data={this.state.data} /> : <Loading />
+                     this.state.covid19 ? <TableData data={this.state.covid19} /> : <Loading />
                   }
                </div>
             </div>
          </React.StrictMode>
       );
    }
-   getData(data) {
-      const _data = { data: data };
-      this.setState(_data);
+   getCovid19(covid19) {
+      const __covid19 = { covid19: covid19 };
+      this.setState(__covid19);
    }
 }
 
