@@ -1,0 +1,14 @@
+$black: #000000;
+
+td{
+    border: 1px solid $black;
+}
+
+thead {
+    background-color: $black;
+    color: #dd0707;
+}
+
+tbody{
+    background-color: #dccece;
+}

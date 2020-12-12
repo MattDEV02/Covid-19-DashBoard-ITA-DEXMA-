@@ -1,6 +1,6 @@
 import React from 'react';
-import { formatData } from './js/utils';
-import './css/index.css';
+import { formatData, percentuale } from './js/utils';
+import './css/table_data/index.css';
 
 class Row extends React.Component {
    constructor(props) {
@@ -8,14 +8,17 @@ class Row extends React.Component {
    }
    render() {
       const covid19 = this.props.covid19;
-      const data = formatData(covid19.data);
+      const formattedData = formatData(covid19.data);
+      const rapporto = percentuale(covid19.nuovi_positivi, covid19.tamponi);
       return (
-         <tr key={data}>
-            <td>{data}</td>
-            <td>{covid19.nuovi_positivi}</td>
-            <td>{covid19.tamponi}</td>
+         <tr key={covid19.data}>
+            <td>{formattedData}</td>
             <td>{covid19.deceduti}</td>
             <td>{covid19.dimessi_guariti}</td>
+            <td>{covid19.totale_positivi}</td>
+            <td>{covid19.nuovi_positivi}</td>
+            <td>{covid19.tamponi}</td>
+            <td className='bg-info'>{(rapporto + ' %')}</td>
          </tr>
       );
    }

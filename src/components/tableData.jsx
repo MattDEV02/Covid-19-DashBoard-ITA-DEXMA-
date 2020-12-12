@@ -1,6 +1,7 @@
 import React from 'react';
 import Row from './row';
-import './css/index.css';
+import './css/table_data/index.css';
+
 
 class TableData extends React.Component {
    constructor(props) {
@@ -9,21 +10,23 @@ class TableData extends React.Component {
    render() {
       const covid19 = this.props.data;
       return (
-         <div className='col-xs-12 col-sm-12 col-md-11 col-lg-10 col-xl-8 mt-4' id='table-container'>
-            <div className='row justify-content-center'>
+         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 mt-4'>
+            <div className='row justify-content-center table-responsive-sm'>
                <table className='table table-hover text-center font-weight-bold'>
-                  <thead className='bg-danger text-light'>
+                  <thead>
                      <tr>
                         <th>Data</th>
-                        <th>Positivi</th>
-                        <th>Tamponi</th>
-                        <th>Decessi</th>
-                        <th>Dimessi Guariti</th>
+                        <th>Decessi Tot.</th>
+                        <th>Dimessi Guariti Tot.</th>
+                        <th>Positivi Tot.</th>
+                        <th>Nuovi Positivi</th>
+                        <th>Tamponi Tot.</th>
+                        <th>Rapporto %</th>
                      </tr>
                   </thead>
-                  <tbody className='bg-light' id='data-tab'>
+                  <tbody>
                      {
-                        covid19.map(row => <Row covid19={row} key={row.data}/>)
+                        covid19.map(row => <Row covid19={row} key={row.data} />)
                      }
                   </tbody>
                </table>

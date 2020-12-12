@@ -7,11 +7,11 @@ import endPoint from './js/utils';
 import './css/index.css';
 
 
-let covid19;
+let covid19 = null;
 class App extends React.Component {
    constructor() {
       super();
-      this.state = { covid19: null };
+      this.state = { covid19: covid19 };
    }
    componentDidMount() {
       axios.get(endPoint)
@@ -22,9 +22,8 @@ class App extends React.Component {
    render() {
       return (
          <React.StrictMode>
-            <Navbar />
             <div className='container-fluid'>
-               <div className='row justify-content-center mt-3'>
+               <div className='row justify-content-center'>
                   {
                      this.state.covid19 ? <TableData data={this.state.covid19} /> : <Loading />
                   }
