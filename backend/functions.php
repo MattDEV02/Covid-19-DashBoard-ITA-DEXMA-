@@ -27,13 +27,13 @@ function getCSV($csv)
 
 function getLastElements($arr, $limit)
 {
+   $len = count($arr);
    $limit_arr = [];
-   do {
-      $cond = (count($limit_arr) < $limit);
-      $data = end($arr);
+   for ($i = 1; $i < ($limit + 1); $i++) {
+      $index = ($len - $i);
+      $data = $arr[$index];
       array_push($limit_arr, $data);
-      array_pop($arr);
-   } while ($cond);
+   }
    return $limit_arr;
 }
 

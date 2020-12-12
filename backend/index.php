@@ -8,11 +8,7 @@ $file = file($url);
 
 $csv = array_map($fun, $file);
 
-array_walk($csv, function (&$a) use ($csv) {
-   $a = array_combine($csv[0], $a);
-});
-
-array_shift($csv);
+$csv = getCSV($csv);
 
 $limit_data = getLastElements($csv, 10);
 
