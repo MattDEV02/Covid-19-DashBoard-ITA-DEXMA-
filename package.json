@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "backend": "cd  ../../apache/bin && start /B httpd.exe"
+    "backend": "cd  ../../apache/bin && start /B httpd.exe",
+    "dev": "npm run backend && npm start"
   },
   "eslintConfig": {
     "extends": [

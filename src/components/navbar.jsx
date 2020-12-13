@@ -20,17 +20,12 @@ class Navbar extends React.Component {
                </li>
                <li className={nav.item}>
                   <a href='/' className={nav.brand}>
-                     Table
+                     Info
                   </a>
                </li>
                <li className={nav.item}>
                   <a href='/' className={nav.brand}>
                      Altro
-                  </a>
-               </li>
-               <li className={nav.item}>
-                  <a href='/' className={nav.brand}>
-                     Calendar
                   </a>
                </li>
                <li className={nav.item}>

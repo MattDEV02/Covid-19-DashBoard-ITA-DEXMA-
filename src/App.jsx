@@ -22,6 +22,7 @@ class App extends React.Component {
    render() {
       return (
          <React.StrictMode>
+            <Navbar />
             <div className='container-fluid'>
                <div className='row justify-content-center'>
                   {
