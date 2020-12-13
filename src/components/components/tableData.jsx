@@ -1,6 +1,6 @@
 import React from 'react';
-import Row from './row';
-import './css/table_data/index.css';
+import RowData from './rowData';
+import '../css/table_data/index.css';
 
 
 class TableData extends React.Component {
@@ -8,9 +8,9 @@ class TableData extends React.Component {
       super(props);
    }
    render() {
-      const covid19 = this.props.data;
+      const covid19 = this.props.covid19;
       return (
-         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 mt-4'>
+         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 mt-5'>
             <div className='row justify-content-center table-responsive-sm'>
                <table className='table table-hover text-center font-weight-bold'>
                   <thead>
@@ -26,7 +26,7 @@ class TableData extends React.Component {
                   </thead>
                   <tbody>
                      {
-                        covid19.map(row => <Row covid19={row} key={row.data} />)
+                        covid19.map(row => <RowData covid19={row} key={row.data} />)
                      }
                   </tbody>
                </table>

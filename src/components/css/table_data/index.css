@@ -1,13 +1,13 @@
 td {
-  border: 1px solid #000000;
+  border: 1px solid #0c0c0c;
 }
 
 thead {
-  background-color: #000000;
-  color: #dd0707;
+  background-color: #0c0c0c;
+  color: #d10909;
 }
 
 tbody {
-  background-color: #dccece;
+  background-color: #b1acac;
 }
 /*# sourceMappingURL=index.css.map */

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
-import TableData from './components/tableData';
+import Body from './components/body';
 import endPoint from './js/utils';
 import './css/index.css';
 
@@ -26,7 +26,7 @@ class App extends React.Component {
             <div className='container-fluid'>
                <div className='row justify-content-center'>
                   {
-                     this.state.covid19 ? <TableData data={this.state.covid19} /> : <Loading />
+                     this.state.covid19 ? <Body covid19={this.state.covid19} /> : <Loading />
                   }
                </div>
             </div>

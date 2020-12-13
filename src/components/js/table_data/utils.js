@@ -7,11 +7,6 @@ const formatData = data => {
    return formatted;
 };
 
-const nav = {
-   item: 'nav-item',
-   brand: 'navbar-brand'
-};
-
 const percentuale = (n1, n2) => {
    const div = (n1 / n2);
    const percent = (div * 100);
@@ -19,8 +14,9 @@ const percentuale = (n1, n2) => {
    return percentFixed;
 };
 
+
 export {
    formatData,
    percentuale,
-   nav
 };
+

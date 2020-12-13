@@ -1,8 +1,8 @@
 import React from 'react';
-import { formatData, percentuale } from './js/utils';
-import './css/table_data/index.css';
+import { formatData, percentuale } from '../js/table_data/utils';
+import '../css/table_data/index.css';
 
-class Row extends React.Component {
+class RowData extends React.Component {
    constructor(props) {
       super(props);
    }
@@ -24,4 +24,4 @@ class Row extends React.Component {
    }
 }
 
-export default Row;
+export default RowData;
