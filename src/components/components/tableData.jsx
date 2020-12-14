@@ -11,7 +11,7 @@ class TableData extends React.Component {
       const covid19 = this.props.covid19;
       return (
          <div className='col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 mt-5'>
-            <div className='row justify-content-center table-responsive-sm'>
+            <div className='row table-responsive-sm'>
                <table className='table table-hover text-center font-weight-bold'>
                   <thead>
                      <tr>

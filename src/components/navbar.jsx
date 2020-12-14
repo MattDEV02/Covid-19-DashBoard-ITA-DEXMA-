@@ -14,17 +14,17 @@ class Navbar extends React.Component {
                   </a>
                </li>
                <li className={nav.item}>
-                  <a href='/' className={nav.brand}>
+                  <a href='https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv' className={nav.brand}>
                      Fonti
                   </a>
                </li>
                <li className={nav.item}>
-                  <a href='/' className={nav.brand}>
+                  <a href='https://github.com/pcm-dpc/COVID-19/' className={nav.brand}>
                      Info
                   </a>
                </li>
                <li className={nav.item}>
-                  <a href='/' className={nav.brand}>
+                  <a href='https://matteolambertucci.altervista.org/all/' className={nav.brand}>
                      Altro
                   </a>
                </li>
