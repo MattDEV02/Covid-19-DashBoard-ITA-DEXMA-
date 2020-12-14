@@ -9,6 +9,7 @@ const calculate = covid19 => {
       ingressi_terapia_intensiva.push(row.ingressi_terapia_intensiva);
       variazioni_totale_positivi.push(row.variazione_totale_positivi);
    });
+   console.log(variazioni_totale_positivi);
    const
       minNuovi_positivi = Math.min(...nuovi_positivi),
       maxNuovi_positivi = Math.max(...nuovi_positivi),
@@ -33,11 +34,11 @@ const calculate = covid19 => {
    return covid19Calculated;
 };
 
-const Covid19Interval = dati => {
+const covid19Interval = covid19 => {
    const
-      nuovi_positiviDiff = (dati.nuovi_positivi.max - dati.nuovi_positivi.min),
-      ingressi_terapia_intensivaDiff = (dati.ingressi_terapia_intensiva.max - dati.ingressi_terapia_intensiva.min),
-      variazioni_totale_positiviDiff = (dati.variazioni_totale_positivi.max - dati.variazioni_totale_positivi.min);
+      nuovi_positiviDiff = (covid19.nuovi_positivi.max - covid19.nuovi_positivi.min),
+      ingressi_terapia_intensivaDiff = (covid19.ingressi_terapia_intensiva.max - covid19.ingressi_terapia_intensiva.min),
+      variazioni_totale_positiviDiff = (covid19.variazioni_totale_positivi.max - covid19.variazioni_totale_positivi.min);
    const interval = {
       nuovi_positivi: nuovi_positiviDiff,
       ingressi_terapia_intensiva: ingressi_terapia_intensivaDiff,
@@ -46,8 +47,34 @@ const Covid19Interval = dati => {
    return interval;
 };
 
+Array.prototype.sum = function() {
+   const intArr = this.map(elem => parseInt(elem));
+   const sum = intArr.reduce((a, b) => ((a + b)));
+   return sum;
+};
+
+const covid19Total = () => {
+   const
+      nuovi_positiviSum = nuovi_positivi.sum(),
+      ingressi_terapia_intensivaSum = ingressi_terapia_intensiva.sum(),
+      variazioni_totale_positiviSum = variazioni_totale_positivi.sum();
+   const total = {
+      nuovi_positivi: nuovi_positiviSum,
+      ingressi_terapia_intensiva: ingressi_terapia_intensivaSum,
+      variazioni_totale_positivi: variazioni_totale_positiviSum
+   };
+   return total;
+};
+
+const tooltipID = 'min-max';
+
+const BgInfo = 'bg-info';
+
 export default calculate;
 
 export {
-   Covid19Interval
+   covid19Interval,
+   covid19Total,
+   tooltipID,
+   BgInfo
 };

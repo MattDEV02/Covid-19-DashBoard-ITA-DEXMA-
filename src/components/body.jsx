@@ -1,6 +1,7 @@
 import React from 'react';
 import TableData from './components/tableData';
 import TableMinMax from './components/tableMinMax';
+import Chart from './components/chart';
 
 
 class Body extends React.Component {
@@ -13,6 +14,7 @@ class Body extends React.Component {
          <React.StrictMode>
             <TableData covid19={covid19} />
             <TableMinMax covid19={covid19} />
+            <Chart />
          </React.StrictMode>
       );
    }

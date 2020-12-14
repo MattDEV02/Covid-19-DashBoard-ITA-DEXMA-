@@ -1,5 +1,7 @@
 import React from 'react';
-import RowData from './rowData';
+import ReactTooltip from 'react-tooltip';
+import RowData from './components/rowData';
+import { tables , tooltipID } from './js/table_data/utils';
 import './css/table_data/index.css';
 
 
@@ -10,9 +12,10 @@ class TableData extends React.Component {
    render() {
       const covid19 = this.props.covid19;
       return (
-         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 mt-5'>
-            <div className='row table-responsive-sm'>
-               <table className='table table-hover text-center font-weight-bold'>
+         <div className='col-xs-12 col-sm-12 col-md-11 col-lg-11 col-xl-10 mt-5'>
+            <div className={tables.row}>
+               <table className={tables.tab} data-tip='' data-for={tooltipID}>
+               <ReactTooltip id={tooltipID}>Questa Tabella riporta alcuni Dati sul Covid19 Relativi agli ultimi 10 Giorni</ReactTooltip>
                   <thead>
                      <tr>
                         <th>Data</th>

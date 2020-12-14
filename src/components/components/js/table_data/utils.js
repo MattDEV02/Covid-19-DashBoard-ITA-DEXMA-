@@ -14,9 +14,16 @@ const percentuale = (n1, n2) => {
    return percentFixed;
 };
 
+const tables = {
+   row: 'row table-responsive-md',
+   tab: 'table table-hover text-center font-weight-bold'
+};
+
+const tooltipID = 'data-tab-tooltip';
 
 export {
    formatData,
    percentuale,
+   tables,
+   tooltipID
 };
-

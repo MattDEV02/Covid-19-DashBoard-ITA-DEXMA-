@@ -1,6 +1,8 @@
 import React from 'react';
-import RowMinMax from './rowMinMax';
-import calculate from './js/table_min_max/utils';
+import ReactTooltip from 'react-tooltip';
+import RowMinMax from './components/rowMinMax';
+import calculate, { tooltipID } from './js/table_min_max/utils';
+import { tables } from './js/table_data/utils';
 
 class TableMinMax extends React.Component {
    constructor(props) {
@@ -10,15 +12,17 @@ class TableMinMax extends React.Component {
       const covid19 = this.props.covid19;
       const covid19Calculated = calculate(covid19);
       return (
-         <div className='col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-6 mt-4'>
-            <div className='row table-responsive-sm'>
-               <table className='table table-hover text-center font-weight-bold'>{/*exporting... */}
+         <div className='col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xl-6 mt-4'>
+            <div className={tables.row}>
+               <table className={tables.tab} data-tip='' data-for={tooltipID}>
+                  <ReactTooltip id={tooltipID} place='right'>Questa Tabella riporta i Minimi e i Massimi di alcuni Dati sul Covid19 Relativi agli ultimi 10 Giorni</ReactTooltip>
                   <thead>
                      <tr>
                         <th>Tipologia</th>
                         <th>Minimo</th>
                         <th>Massimo</th>
                         <th>Intervallo</th>
+                        <th>Totale</th>
                      </tr>
                   </thead>
                   <tbody>
