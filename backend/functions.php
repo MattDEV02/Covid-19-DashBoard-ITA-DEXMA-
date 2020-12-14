@@ -37,4 +37,4 @@ function getLastElements($arr, $limit)
    return $limit_arr;
 }
 
-$fun = 'str_getcsv';
+$funcName = 'str_getcsv';

@@ -6,7 +6,7 @@ $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento
 
 $file = file($url);
 
-$csv = array_map($fun, $file);
+$csv = array_map($funcName, $file);
 
 $csv = getCSV($csv);
 

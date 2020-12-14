@@ -1,6 +1,6 @@
 import React from 'react';
 import RowData from './rowData';
-import '../css/table_data/index.css';
+import './css/table_data/index.css';
 
 
 class TableData extends React.Component {
