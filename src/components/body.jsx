@@ -14,7 +14,7 @@ class Body extends React.Component {
          <React.StrictMode>
             <TableData covid19={covid19} />
             <TableMinMax covid19={covid19} />
-            <Chart />
+            <Chart covid19={covid19} />
          </React.StrictMode>
       );
    }

@@ -1,15 +1,34 @@
+import {
+   formatData
+} from '../table_data/utils';
+
+
 let
    nuovi_positivi = [],
    ingressi_terapia_intensiva = [],
-   variazioni_totale_positivi = [];
+   variazioni_totale_positivi = [],
+   date = [];
+
+const arrayFetch = dati => {
+   if (nuovi_positivi.length === 0) {
+      dati.map(row => {
+         nuovi_positivi.push(row.nuovi_positivi);
+         ingressi_terapia_intensiva.push(row.ingressi_terapia_intensiva);
+         variazioni_totale_positivi.push(row.variazione_totale_positivi);
+         date.push(formatData(row.data));
+      });
+   }
+   const covid19 = {
+      nuovi_positivi: nuovi_positivi,
+      ingressi_terapia_intensiva: ingressi_terapia_intensiva,
+      variazioni_totale_positivi: variazioni_totale_positivi,
+      date: date
+   };
+   return covid19;
+};
 
 const calculate = covid19 => {
-   covid19.map(row => {
-      nuovi_positivi.push(row.nuovi_positivi);
-      ingressi_terapia_intensiva.push(row.ingressi_terapia_intensiva);
-      variazioni_totale_positivi.push(row.variazione_totale_positivi);
-   });
-   console.log(variazioni_totale_positivi);
+   arrayFetch(covid19);
    const
       minNuovi_positivi = Math.min(...nuovi_positivi),
       maxNuovi_positivi = Math.max(...nuovi_positivi),
@@ -47,7 +66,7 @@ const covid19Interval = covid19 => {
    return interval;
 };
 
-Array.prototype.sum = function() {
+Array.prototype.sum = function () {
    const intArr = this.map(elem => parseInt(elem));
    const sum = intArr.reduce((a, b) => ((a + b)));
    return sum;
@@ -73,6 +92,7 @@ const BgInfo = 'bg-info';
 export default calculate;
 
 export {
+   arrayFetch,
    covid19Interval,
    covid19Total,
    tooltipID,
