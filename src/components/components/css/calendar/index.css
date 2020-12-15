@@ -1,0 +1,21 @@
+:root {
+  --fc-border-color: #000000;
+}
+
+.fc-header-toolbar {
+  background-color: #208f0a;
+}
+
+.fc-daygrid-day-number {
+  color: #820612;
+}
+
+.fc-col-header-cell-cushion {
+  color: #820612;
+}
+
+.fc-event-title {
+  font-weight: bold;
+  color: #000000;
+}
+/*# sourceMappingURL=index.css.map */

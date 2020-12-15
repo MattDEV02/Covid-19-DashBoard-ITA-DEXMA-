@@ -1,0 +1,22 @@
+$darkred: #820612;
+
+:root {
+    --fc-border-color: #000000;
+}
+
+.fc-header-toolbar {
+    background-color: rgb(32, 143, 10);
+}
+
+.fc-daygrid-day-number {
+    color: $darkred;
+}
+
+.fc-col-header-cell-cushion {
+    color: $darkred;
+}
+
+.fc-event-title {
+    font-weight: bold;
+    color: #000000;
+}

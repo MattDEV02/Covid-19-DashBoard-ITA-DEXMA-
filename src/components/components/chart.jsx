@@ -4,7 +4,7 @@ import BarChart from './components/barChart';
 import HorizontalBarChart from './components/horizontalbarChart';
 import LinearChart from './components/linearChart';
 import RadarChart from './components/radarChart';
-import config, { setConfig, type, tooltipID , colors } from './js/chart/utils';
+import config, { setConfig, type, tooltipID, colors } from './js/chart/utils';
 import { arrayFetch } from './js/table_min_max/utils';
 import './css/chart/index.css';
 
@@ -18,7 +18,8 @@ class Chart extends React.Component {
    render() {
       const covid19 = this.props.covid19;
       const dati = arrayFetch(covid19);
-      setConfig(dati)
+      setConfig(dati);
+      const type = this.state.type;
       return (
          <React.StrictMode>
             <div className='col-12 mt-5' id='chart-container'>
@@ -31,9 +32,9 @@ class Chart extends React.Component {
                      <option value='radar'>Radar</option>
                   </select>
                   {
-                     this.state.type === 'bar' ? <BarChart config={config} /> :
-                        this.state.type === 'horizontal-bar' ? <HorizontalBarChart config={config} /> :
-                           this.state.type === 'line' ? <LinearChart config={config} /> :
+                     type === 'bar' ? <BarChart config={config} /> :
+                        type === 'horizontal-bar' ? <HorizontalBarChart config={config} /> :
+                           type === 'line' ? <LinearChart config={config} /> :
                               <RadarChart config={config} />
                   }
                </div>
