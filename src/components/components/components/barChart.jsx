@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bar, Line, HorizontalBar } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 
 class BarChart extends React.Component {
@@ -9,7 +9,7 @@ class BarChart extends React.Component {
    render() {
       const config = this.props.config;
       return (
-         <Bar data={config.data} options={config.options} />
+         <Bar data={config.data} options={config.options} height={config.height}/>
       );
    }
 }

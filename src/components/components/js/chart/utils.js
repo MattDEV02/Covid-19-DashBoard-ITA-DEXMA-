@@ -1,32 +1,39 @@
+const colors = {
+   darkred: '#8b0000',
+   gold: '#d4af37',
+   white: '#ffffff'
+};
+
 const data = {
-   labels: null,
    datasets: [{
-      label: 'Legenda , click there',
-      fill: true,
-      backgroundColor: 'darkred',
-      borderColor: 'gold',
+      label: 'Legenda',
+      backgroundColor: colors.darkred,
+      borderColor: colors.gold,
       borderWidth: 0.5,
-      pointBackgroundColor: '#fff',
-      pointRadius: 2,
-      data: null
+      pointBackgroundColor: colors.gold,
+      pointRadius: 3,
    }]
 };
+
 const options = {
    legend: {
       labels: {
-         fontColor: 'white',
+         fontColor: colors.white,
          fontSize: 14,
-      },
+      }
    },
    title: {
       display: true,
-      text: 'Andamento Curva Covid19 Italia',
+      text: 'Andamento Curva Nuovi Positivi Covid19 Italia', //...
    }
 };
 
+const height = 141;
+
 const config = {
    data: data,
-   options: options
+   options: options,
+   height: height
 };
 
 const setConfig = dati => {
@@ -35,8 +42,19 @@ const setConfig = dati => {
    return config;
 };
 
+const type = { // Like an Enum
+   line: 'line',
+   bar: 'bar',
+   horizontalBar: 'horizontal-bar'
+};
+
+const tooltipID = 'select-chart-type';
+
 export default config;
 
 export {
-   setConfig
+   setConfig,
+   colors,
+   type,
+   tooltipID
 };

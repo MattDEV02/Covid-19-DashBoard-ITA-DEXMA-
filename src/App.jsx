@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
-import endPoint from './js/utils';
+import endPoint, { handleError } from './js/utils';
 import './css/index.css';
 
 
@@ -11,12 +11,12 @@ let covid19 = null;
 class App extends React.Component {
    constructor() {
       super();
-      this.state = { covid19: covid19 };
+      this.state = { covid19: covid19, reqERR: false };
    }
    componentDidMount() {
       axios.get(endPoint)
          .then(response => covid19 = response.data)
-         .catch(error => console.error(error))
+         .catch(error => this.handleError(error))
          .then(() => this.getCovid19(covid19));
    }
    render() {
@@ -26,7 +26,7 @@ class App extends React.Component {
             <div className='container-fluid'>
                <div className='row justify-content-center'>
                   {
-                     this.state.covid19 ? <Body covid19={this.state.covid19} /> : <Loading />
+                     this.state.covid19 ? <Body covid19={this.state.covid19} /> : <Loading reqERR={this.state.reqERR} />
                   }
                </div>
             </div>
@@ -36,6 +36,11 @@ class App extends React.Component {
    getCovid19(covid19) {
       const __covid19 = { covid19: covid19 };
       this.setState(__covid19);
+   }
+   handleError(error) {
+      const getErr = { reqERR: true };
+      this.setState(getErr);
+      console.error(error);
    }
 }
 

@@ -1,12 +1,19 @@
 import React from 'react';
-import { arrayFetch } from './js/table_min_max/utils';
+import ReactTooltip from 'react-tooltip';
 import BarChart from './components/barChart';
-import config, { setConfig } from './js/chart/utils';
+import HorizontalBarChart from './components/horizontalbarChart';
+import LinearChart from './components/linearChart';
+import RadarChart from './components/radarChart';
+import config, { setConfig, type, tooltipID , colors } from './js/chart/utils';
+import { arrayFetch } from './js/table_min_max/utils';
 import './css/chart/index.css';
+
+
 
 class Chart extends React.Component {
    constructor(props) {
       super(props);
+      this.state = { type: type.bar };
    }
    render() {
       const covid19 = this.props.covid19;
@@ -14,11 +21,30 @@ class Chart extends React.Component {
       setConfig(dati)
       return (
          <React.StrictMode>
-            <div className='col-12 mt-5 mb-1' id='chart-container'>
-               <BarChart config={config} />
+            <div className='col-12 mt-5' id='chart-container'>
+               <div className='row'>
+                  <ReactTooltip id={tooltipID} place='top' textColor={colors.gold} backgroundColor={colors.darkred} >Try to change Chart Type !</ReactTooltip>
+                  <select className='form-control-sm' onChange={e => this.handleSelect(e)} data-tip='' data-for={tooltipID}>
+                     <option value='bar'>Barre Verticali</option>
+                     <option value='horizontal-bar'>Barre Orizzontali</option>
+                     <option value='line'>Lineare</option>
+                     <option value='radar'>Radar</option>
+                  </select>
+                  {
+                     this.state.type === 'bar' ? <BarChart config={config} /> :
+                        this.state.type === 'horizontal-bar' ? <HorizontalBarChart config={config} /> :
+                           this.state.type === 'line' ? <LinearChart config={config} /> :
+                              <RadarChart config={config} />
+                  }
+               </div>
             </div>
          </React.StrictMode>
       );
+   }
+   handleSelect(e) {
+      const type = e.target.value;
+      const setType = { type: type };
+      this.setState(setType);
    }
 }
 

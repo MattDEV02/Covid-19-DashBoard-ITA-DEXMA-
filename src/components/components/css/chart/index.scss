@@ -1,3 +1,13 @@
 #chart-container {
    background-color: #272727;
 }
+
+select,
+option {
+   font-weight: bold;
+   border: 1px solid #000000;
+}
+
+select:hover {
+   cursor: pointer;
+}
