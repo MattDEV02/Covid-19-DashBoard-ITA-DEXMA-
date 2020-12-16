@@ -40,6 +40,7 @@ class App extends React.Component {
    }
    handleError(error) {
       const getErr = { reqERR: true };
+      //scscsc
       this.setState(getErr);
       console.error(error);
    }
