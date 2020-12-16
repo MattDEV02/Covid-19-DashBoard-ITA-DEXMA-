@@ -1,34 +1,78 @@
 <!DOCTYPE html>
-<html lang="it" dir="ltr">
+<html lang='it' dir='ltr'>
+
+<!--
+
+   Linguaggi , Framework , Librerie e Tecnoglie utilizzate: 
+
+      Back-end: 
+
+         - PHP.
+
+      Front-end: 
+
+         - React-js.
+
+         - Bootstrap.
+
+         - SASS.
+
+
+Descrizione: 
+
+
+Matteo Lambertucci 5F ITIS Vallari Velletri , 15 / 12 / 2020.       
+
+-->
 
 <head>
-   <meta charset="utf-8" />
-   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <meta name="theme-color" content="#000000" />
-   <meta name="description" content="Web site created using create-react-app" />
-   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-   <title>Covid-19</title>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-      crossorigin="anonymous" />
+   <title>Covid19 DashBoard-ITA</title>
+   <!--<base href='<YOUR_DEFAULT_URl>' target='YOUR_DEFAULT_TARGET' />-->
+   <meta charset='utf-8' />
+   <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+   <meta name='author' content='Matteo Lambertucci matteolambertucci3@gmail.com' />
+   <meta name='application-name' content='Covid19 DashBoard-ITA'>
+   <meta name='apple-mobile-web-app-title' content='Covid19 DashBoard-ITA'>
+   <meta name='generator' content='VS-Code , Atom' />
+   <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
+   <meta name='theme-color' content='#00cca3' />
+   <meta name='msapplication-TileColor' content='#00cca3' />
+   <meta name='description'
+      content='Web App che Rappresenta Graficamente i Dati degli ultimi 10 Giorni relativo all Andamento del Covid19 in Italia.' />
+   <meta name='mobile-web-app-capable' content='yes'>
+   <meta name='keywords'
+      content='Covid19 , Italia , ReactJS , Bootstrap , SASS , PHP , JavaScript, Front-end , Back-end , Full-Stack , Responsive-Layout , HTTP , GET Method ,  ASYNC Requests' />
+   <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+   <meta http-equiv='cache-control' content='no-cache' />
+   <meta name='copyright' content='Proprietario di questa Web App' />
+   <meta name='robots' content='NOINDEX, NOFOLLOW' />
+   <meta name='msapplication-square70x70logo' content='%PUBLIC_URL%/logo192.png' />
+   <meta name='msapplication-square150x150logo' content='%PUBLIC_URL%/logo192.png' />
+   <meta name='msapplication-wide310x150logo' content='%PUBLIC_URL%/logo192.png' />
+   <meta name='msapplication-square310x310logo' content='%PUBLIC_URL%/logo192.png' />
+   <link rel='shortcut icon' type='image/x-icon' href='%PUBLIC_URL%/favicon.ico' />
+   <link rel='icon' sizes='64x64' type='image/x-icon' href='%PUBLIC_URL%/favicon.ico' />
+   <link rel='apple-touch-icon' sizes='192x192' href='%PUBLIC_URL%/logo192.png' />
+   <link rel='mask-icon' href='%PUBLIC_URL%/logo.svg' color='#00cca3'>
+   <link rel='manifest' href='%PUBLIC_URL%/manifest.json' />
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'
+      integrity='sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=' crossorigin='anonymous' />
+   <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'
+      integrity='sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z' crossorigin='anonymous' />
 </head>
 
 <body>
-   <noscript><b>You need to enable JavaScript to run this app.</b></noscript>
-   <div id="root"></div>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
+   <noscript><b>You need to enable JavaScript to run this Web-App.</b></noscript>
+   <div id='root'></div>
+   <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'
+      integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN'
+      crossorigin='anonymous'></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'
+      integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q'
+      crossorigin='anonymous'></script>
+   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'
+      integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl'
+      crossorigin='anonymous'></script>
 </body>
 
 </html>

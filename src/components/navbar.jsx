@@ -9,7 +9,7 @@ class Navbar extends React.Component {
          <nav className='navbar navbar-expand-sm bg-dark navbar-dark navbar-custom justify-content-center'>
             <ul className='navbar-nav'>
                <li className={nav.item}>
-                  <a href='/' className={nav.brand}>
+                  <a href='http://www.salute.gov.it/' className={nav.brand}>
                      Home
                   </a>
                </li>
@@ -29,7 +29,7 @@ class Navbar extends React.Component {
                   </a>
                </li>
                <li className={nav.item}>
-                  <a href='/' className={nav.brand}>
+                  <a href='https://www.instagram.com/_matte.02_/?hl=it' className={nav.brand}>
                      About
                   </a>
                </li>
