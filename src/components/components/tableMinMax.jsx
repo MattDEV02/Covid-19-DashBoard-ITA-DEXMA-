@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import RowMinMax from './components/rowMinMax';
 import calculate, { tooltipID } from './js/table_min_max/utils';
-import { tables } from './js/table_data/utils';
+import { tables, calculator } from './js/table_data/utils';
 
 
 let covid19Calculated = null;
@@ -23,8 +23,8 @@ class TableMinMax extends React.Component {
                         <th>Tipologia</th>
                         <th>Minimo</th>
                         <th>Massimo</th>
-                        <th>Intervallo<i className='fas fa-calculator ml-2'></i></th>
-                        <th>Totale<i className='fas fa-calculator ml-2'></i></th>
+                        <th>Intervallo<i className={calculator}></i></th>
+                        <th>Totale<i className={calculator}></i></th>
                      </tr>
                   </thead>
                   <tbody>

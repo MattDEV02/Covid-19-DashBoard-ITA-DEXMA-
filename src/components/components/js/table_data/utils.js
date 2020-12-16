@@ -21,9 +21,12 @@ const tables = {
 
 const tooltipID = 'data-tab-tooltip';
 
+const calculator = 'fas fa-calculator ml-2';
+
 export {
    formatData,
    percentuale,
    tables,
-   tooltipID
+   tooltipID,
+   calculator
 };

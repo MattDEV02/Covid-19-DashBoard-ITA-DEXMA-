@@ -1,6 +1,6 @@
 # DEXMA Entry Test
 
-## Online Demo -> http://heroku.apps//
+## Online Demo -> 
 
 ## Description:
 
