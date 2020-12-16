@@ -19,7 +19,7 @@ class Navbar extends React.Component {
                   </a>
                </li>
                <li className={nav.item}>
-                  <a href='https://github.com/MattDEV02/Covid-19-DashBoard-ITA-DEXMA-.git' className={nav.brand}>
+                  <a href='https://github.com/MattDEV02/Covid-19-DashBoard-ITA-DEXMA-' className={nav.brand}>
                      Info
                   </a>
                </li>
