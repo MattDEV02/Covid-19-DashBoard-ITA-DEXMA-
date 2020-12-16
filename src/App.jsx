@@ -34,7 +34,8 @@ class App extends React.Component {
       );
    }
    getCovid19(covid19) {
-      console.log(covid19);
+      console.log(covid19,1);
+      1
       const __covid19 = { covid19: covid19 };
       this.setState(__covid19);
    }
