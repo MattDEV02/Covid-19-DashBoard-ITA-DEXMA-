@@ -5,11 +5,8 @@ import App from './App';
 
 const selector = 'root';
 
-const app =
-   <React.StrictMode>
-      <App />
-   </React.StrictMode>,
-   root = document.getElementById(selector)
-
+const
+   app = <App />,
+   root = document.getElementById(selector);
 
 ReactDOM.render(app, root);

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
-import endPoint, { handleError } from './js/utils';
+import endPoint from './js/utils';
 import './css/index.css';
 
 
@@ -34,6 +34,7 @@ class App extends React.Component {
       );
    }
    getCovid19(covid19) {
+      console.log(covid19);
       const __covid19 = { covid19: covid19 };
       this.setState(__covid19);
    }
