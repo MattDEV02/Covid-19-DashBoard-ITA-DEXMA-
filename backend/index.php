@@ -15,3 +15,5 @@ $limit_data = getLastElements($csv, 10);
 $json = json_encode($limit_data);
 
 echo $json;
+
+?>
