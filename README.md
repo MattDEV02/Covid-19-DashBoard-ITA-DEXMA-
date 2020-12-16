@@ -70,7 +70,7 @@ This command will start Apache Web Server in background (only Windows system).
 
 ### `npm run frontend`
 
-This command will run [`serve -s build`].
+This command will run [`npm run build && serve -s build`].
 
 ### `npm run fetch`
 

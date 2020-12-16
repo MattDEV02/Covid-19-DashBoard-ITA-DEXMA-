@@ -3,15 +3,15 @@
 }
 
 .fc-header-toolbar {
-  background-color: #208f0a;
-}
-
-.fc-daygrid-day-number {
-  color: #820612;
+  background-color: #25af09;
 }
 
 .fc-col-header-cell-cushion {
   color: #820612;
+}
+
+.fc-daygrid-day-number {
+  color: #d31515;
 }
 
 .fc-event-title {
