@@ -4,7 +4,7 @@ import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
 import endPoint from './js/utils';
-import './css/index.css';//
+import './css/index.css';
 
 
 let covid19 = null;
@@ -34,8 +34,7 @@ class App extends React.Component {
       );
    }
    getCovid19(covid19) {
-      console.log(covid19,1);
-      1
+      console.log(covid19);
       const __covid19 = { covid19: covid19 };
       this.setState(__covid19);
    }
