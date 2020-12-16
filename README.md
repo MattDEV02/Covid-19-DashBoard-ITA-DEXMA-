@@ -1,15 +1,43 @@
-# Getting Started with Create React App
+# DEXMA Entry Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Online Demo -> http://heroku.apps/
+
+## Description:
+
+The Client make an Async HTTP Request with GET method at http://localhos:8080/covid19/backend at the page loading ,
+
+If the Request return an Error we will view an Error message , else we will view the Output Data with tables , charts , calendars...
+
+It would have been better to set port 80 since it is the standard port of the HTTP protocol but Xampp didn't make me set it up.
+
+The PHP script get the CSV data , put them into an Array of associative Array and filter the last 10 elements ,
+
+then convert this 10 elements into a JSON which will be output with "echo"
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `npm install`
+
+This comand will fetch the dependecies in package.json file.
+
+### `serve -s build`
+
+This comand will start a Server of React that can serve the build App
+present in the build folder.\
+Open [http://localhost:5000](http://127.0.0.1:5000) to view it in the browse
+.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://127.0.0.1:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
@@ -18,11 +46,6 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
@@ -39,32 +62,49 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# My NPM commands
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `npm run backend`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This command will start Apache Web Server in background (only Windows system).
 
-### Code Splitting
+### `npm run frontend`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This command will run [`serve -s build`].
 
-### Analyzing the Bundle Size
+### `npm run fetch`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This command will run [`npm install`].
 
-### Making a Progressive Web App
+### `npm run open_build`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This command open [http://localhost:5000/](http://127.0.0.1:5000/) with the default broswer.
 
-### Advanced Configuration
+### `npm run dev`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This is the most important command , It run concurrently this commands:
 
-### Deployment
+    1 ) `npm run frontend`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    2 ) `npm run backend`.
 
-### `npm run build` fails to minify
+You can start the project with only this command.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Languages , Framworks , Libraries , Tools used:
+
+    Back-end:
+
+        PHP (no libraries).
+
+    Front-end:
+
+        React-JS.
+
+        Bootstrap.
+
+        SASS.
+
+
+    Other:
+
+        GIT

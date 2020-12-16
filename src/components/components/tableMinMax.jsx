@@ -17,14 +17,14 @@ class TableMinMax extends React.Component {
          <div className='col-xs-12 col-sm-10 col-md-10 col-lg-8 col-xl-6 mt-4'>
             <div className={tables.row}>
                <table className={tables.tab} data-tip='' data-for={tooltipID}>
-                  <ReactTooltip id={tooltipID} place='right'>Questa Tabella riporta i Minimi e i Massimi di alcuni Dati sul Covid19 Relativi agli ultimi 10 Giorni</ReactTooltip>
+                  <ReactTooltip id={tooltipID} place='right'>Questa Tabella riporta alcune stime aritmetiche sui Dati del Covid19 Relativi agli ultimi 10 Giorni</ReactTooltip>
                   <thead>
                      <tr>
                         <th>Tipologia</th>
                         <th>Minimo</th>
                         <th>Massimo</th>
-                        <th>Intervallo</th>
-                        <th>Totale</th>
+                        <th>Intervallo<i className='fas fa-calculator ml-2'></i></th>
+                        <th>Totale<i className='fas fa-calculator ml-2'></i></th>
                      </tr>
                   </thead>
                   <tbody>

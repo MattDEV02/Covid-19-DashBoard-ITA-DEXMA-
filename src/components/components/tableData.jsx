@@ -24,7 +24,7 @@ class TableData extends React.Component {
                         <th>Positivi Tot.</th>
                         <th>Nuovi Positivi</th>
                         <th>Tamponi Tot.</th>
-                        <th>Rapporto %</th>
+                        <th>Rapporto<i className='fas fa-calculator ml-2'></i></th>
                      </tr>
                   </thead>
                   <tbody>
