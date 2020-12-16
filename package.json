@@ -9,10 +9,10 @@
    "license": "ISC",
    "repository": {
       "type": "git",
-      "url": "https://github.com/MattDEV02/"
+      "url": "https://github.com/MattDEV02/Covid-19-DashBoard-ITA-DEXMA-.git"
    },
    "bugs": {
-      "url": "https://github.com/MattDEV02/"
+      "url": "https://github.com/MattDEV02/Covid-19-DashBoard-ITA-DEXMA-/issues"
    },
    "dependencies": {
       "@fullcalendar/daygrid": "^5.4.0",
