@@ -4,7 +4,7 @@ import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
 import endPoint from './js/utils';
-import './css/index.css';
+import './css/index.css';//
 
 
 let covid19 = null;
