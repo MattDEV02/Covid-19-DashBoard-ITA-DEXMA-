@@ -39,9 +39,9 @@ class App extends React.Component {
       this.setState(__covid19);
    }
    handleError(error) {
-      const getErr = { reqERR: true };
+      const getErr = { reqERR: false };
       //scscsc
-      this.setState(getErr);
+      this.setState(getErr,1);
       console.error(error);
    }
 }
