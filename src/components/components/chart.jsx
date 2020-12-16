@@ -6,13 +6,15 @@ import LinearChart from './components/linearChart';
 import RadarChart from './components/radarChart';
 import config, { setConfig, type, tooltipID, colors } from './js/chart/utils';
 import { arrayFetch } from './js/table_min_max/utils';
+import Menu from './components/menu';
 import './css/chart/index.css';
 
 
 
-class Chart extends React.Component {
+class Chart extends Menu {
    constructor(props) {
       super(props);
+      console.log(this.state.option);
       this.state = { type: type.bar };
    }
    render() {
@@ -31,6 +33,7 @@ class Chart extends React.Component {
                      <option value='line'>Lineare</option>
                      <option value='radar'>Radar</option>
                   </select>
+                  <Menu />
                   {
                      type === 'bar' ? <BarChart config={config} /> :
                         type === 'horizontal-bar' ? <HorizontalBarChart config={config} /> :
