@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Navbar from './components/navbar';
+import Navbar from './components/components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
 import endPoint from './js/utils';
