@@ -22,17 +22,17 @@ In the project directory, you can run:
 
 This comand will fetch the dependecies in package.json file.
 
-### `serve -s build`
-
-This comand will start a Server of React that can serve the build App
-present in the build folder.\
-Open [http://localhost:5000](http://127.0.0.1:5000) to view it in the browse
-.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### `serve -s build`
+
+This comand will start a Server provided by React that can serve the build App
+present in the build folder.\
+Open [http://localhost:5000](http://127.0.0.1:5000) to view it in the browse
+.
 
 ### `npm start`
 
@@ -94,17 +94,24 @@ You can start the project with only this command.
 
     Back-end:
 
-        PHP (no libraries).
+        - PHP (no libraries).
 
     Front-end:
 
-        React-JS.
+        - React-JS.
+		
+		- Javascript ( Babel )
 
-        Bootstrap.
+        - Bootstrap.
 
-        SASS.
-
+        - SASS.
+		
+		- HTML
 
     Other:
 
-        GIT
+        GIT , GITHUB.
+		
+		Visual studio code on Windows 10.
+		
+		Atom on Ubuntu desktop 20.10.
