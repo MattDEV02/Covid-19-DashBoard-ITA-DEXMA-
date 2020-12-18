@@ -29,8 +29,9 @@ function getLastElements($arr, $limit)
 {
    $len = count($arr);
    $limit_arr = [];
-   for ($i = 1; $i < ($limit + 1); $i++) {
-      $index = ($len - $i);
+   for ($i = 0; ($i < $limit); $i++) {
+	  $current = ($i+1);
+      $index = ($len - $current);
       $data = $arr[$index];
       array_push($limit_arr, $data);
    }
