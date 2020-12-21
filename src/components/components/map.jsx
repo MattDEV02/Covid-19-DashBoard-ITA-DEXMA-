@@ -1,33 +1,27 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
-import axios from 'axios';
-import endPoint, { options } from './js/map/utils';
+import options from './js/map/utils';
 
 
-let regioni = null;
 class Map extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { regioni: regioni };
+      this.state = {};
    }
    componentDidMount() {
-      axios.get(endPoint)
-         .then(response => regioni = response.data)
-         .catch(error => console.error(error))
-         .then(() => this.setState({ regioni: regioni }));
+
    }
    render() {
+      //console.log('region', this.props.regioni);
       return (
          <div className='col-12 mt-5'>
-            {
-               this.state.regioni ? <Chart
-                  chartType='GeoChart'
-                  data={[
-                     ['City', 'Positivi'],
-                  ]}
-                  options={options}
-               /> : null
-            }
+            <Chart
+               chartType='GeoChart'
+               data={[
+                  ['City', 'Positivi'],
+               ]}
+               options={options}
+            />
          </div>
       );
    }

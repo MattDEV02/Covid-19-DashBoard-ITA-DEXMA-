@@ -10,10 +10,4 @@ const options = {
    datalessRegionColor: 'transparent',
 };
 
-const endPoint = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json';
-
-export default endPoint;
-
-export {
-   options
-};
+export default options;

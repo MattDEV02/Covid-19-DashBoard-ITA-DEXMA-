@@ -3,30 +3,51 @@ import axios from 'axios';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
-import endPoint from './js/utils';
+import endPoint, { endPointRegioni } from './js/utils';
 import './css/index.css';
 
 
-let covid19 = null;
+let
+   covid19 = null,
+   regioni = null,
+   reqERR = false;
 class App extends React.Component {
    constructor() {
       super();
-      this.state = { covid19: covid19, reqERR: false };
+      this.state = { covid19: covid19, regioni: regioni, reqERR: reqERR };
    }
    componentDidMount() {
-      axios.get(endPoint)
-         .then(response => covid19 = response.data)
+      const
+         andamentoNazionale = axios.get(endPoint),
+         andamentoRegioni = axios.get(endPointRegioni);
+      Promise.all([andamentoNazionale, andamentoRegioni]) // Concurrency
+         .then(result => {
+            covid19 = result[0].data;
+            regioni = result[1].data;
+         })
          .catch(error => this.handleError(error))
-         .then(() => this.getCovid19(covid19));
+         .then(() => {
+            this.getCovid19(covid19);
+            this.getRegioni(regioni);
+         });
    }
    render() {
+      const
+         covid19State = this.state.covid19,
+         regioniState = this.state.regioni,
+         reqERRState = this.state.reqERR;
       return (
          <React.StrictMode>
             <Navbar />
             <div className='container-fluid'>
                <div className='row justify-content-center'>
                   {
-                     this.state.covid19 ? <Body covid19={this.state.covid19} /> : <Loading reqERR={this.state.reqERR} />
+                     (covid19State && regioniState) ?
+                        <Body
+                           covid19={covid19State}
+                           regioni={regioniState}
+                        /> :
+                        <Loading reqERR={reqERRState} />
                   }
                </div>
             </div>
@@ -38,10 +59,15 @@ class App extends React.Component {
       const __covid19 = { covid19: covid19 };
       this.setState(__covid19);
    }
+   getRegioni(regioni) {
+      console.log(regioni);
+      const __regioni = { regioni: regioni };
+      this.setState(__regioni);
+   }
    handleError(error) {
+      console.error(error);
       const getErr = { reqERR: true };
       this.setState(getErr);
-      console.error(error);
    }
 }
 
