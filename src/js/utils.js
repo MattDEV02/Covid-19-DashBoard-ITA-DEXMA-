@@ -6,7 +6,6 @@ const
 
 const endPoint = String(protocol + '://' + host + ':' + port + route);
 
-
 export default endPoint;
 
 

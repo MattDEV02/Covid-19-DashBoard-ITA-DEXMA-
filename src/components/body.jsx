@@ -11,16 +11,14 @@ class Body extends React.Component {
       super(props);
    }
    render() {
-      const
-         covid19 = this.props.covid19,
-         covid19Regioni = null;
+      const covid19 = this.props.covid19;
       return (
          <React.StrictMode>
             <TableData covid19={covid19} />
             <TableMinMax covid19={covid19} />
             <Chart covid19={covid19} />
             <Calendar covid19={covid19} />
-            <Map covid19Regioni={covid19Regioni} />
+            <Map />
          </React.StrictMode>
       );
    }
