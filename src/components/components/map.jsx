@@ -13,12 +13,20 @@ class Map extends React.Component {
       const mapData = getMapData(regioni);
       return (
          <div className='col-12 mt-5'>
-            <Chart
-               height={'100vh'}
-               chartType={options.type}
-               data={mapData}
-               options={options}
-            />
+            <div className="row justify-content-center">
+               <h1 className='text-danger'>Hover an Italian Region
+                  <i class='fas fa-pizza-slice ml-3'></i>
+               </h1>
+            </div>
+            <div className='mt-3'>
+               <Chart
+                  height={options.height}
+                  chartType={options.type}
+                  data={mapData}
+                  options={options}
+               />
+
+            </div>
          </div>
       );
    }

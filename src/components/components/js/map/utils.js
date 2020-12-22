@@ -8,7 +8,8 @@ const options = {
    colorAxis: colors,
    backgroundColor: '#272727',
    datalessRegionColor: 'transparent',
-   type: 'GeoChart'
+   type: 'GeoChart',
+   height: '88vh',
 };
 
 const getMapData = regioni => {
