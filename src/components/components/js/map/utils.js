@@ -15,7 +15,7 @@ const getMapData = regioni => {
    const index = 11;
    let datiTrentino = 0;
    datiTrentino = regioni[index].nuovi_positivi;
-   regioni.splice(11, 1);
+   regioni.splice(index, 1);
    let covid19Regioni = [
       ['City', 'Positivi']
    ];
