@@ -42,12 +42,12 @@ class App extends React.Component {
             <div className='container-fluid'>
                <div className='row justify-content-center'>
                   {
-                     (covid19State && regioniState) ?
+                     (covid19State && regioniState) ?  /* Check if the Output is Ready */
                         <Body
                            covid19={covid19State}
                            regioni={regioniState}
                         /> :
-                        <Loading reqERR={reqERRState} />
+                        <Loading reqERR={reqERRState} /> /*This will Display this Message: "The Output is Loading..."  */
                   }
                </div>
             </div>
@@ -56,13 +56,13 @@ class App extends React.Component {
    }
    getCovid19(covid19) {
       console.log(covid19);
-      const __covid19 = { covid19: covid19 };
-      this.setState(__covid19);
+      const __covid19__ = { covid19: covid19 };
+      this.setState(__covid19__);
    }
    getRegioni(regioni) {
       console.log(regioni);
-      const __regioni = { regioni: regioni };
-      this.setState(__regioni);
+      const __regioni__ = { regioni: regioni };
+      this.setState(__regioni__);
    }
    handleError(error) {
       console.error(error);

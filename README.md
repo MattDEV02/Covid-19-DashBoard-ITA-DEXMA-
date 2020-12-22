@@ -99,19 +99,19 @@ You can start the project with only this command.
     Front-end:
 
         - React-JS.
-		
-		- Javascript ( Babel )
+
+    	- Javascript ( Babel , ES6 )
 
         - Bootstrap.
 
         - SASS.
-		
-		- HTML
+
+    	- HTML
 
     Other:
 
         GIT , GITHUB.
-		
-		Visual studio code on Windows 10.
-		
-		Atom on Ubuntu desktop 20.10.
+
+    	Visual studio code on Windows 10.
+
+    	Atom on Ubuntu desktop 20.10.
