@@ -25,7 +25,6 @@ class Map extends React.Component {
                   data={mapData}
                   options={options}
                />
-
             </div>
          </div>
       );

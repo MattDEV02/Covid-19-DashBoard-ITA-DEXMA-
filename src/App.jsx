@@ -20,7 +20,7 @@ class App extends React.Component {
       const
          andamentoNazionale = axios.get(endPoint),
          andamentoRegioni = axios.get(endPointRegioni);
-      Promise.all([andamentoNazionale, andamentoRegioni]) // Concurrency
+      Promise.all([andamentoNazionale, andamentoRegioni]) // In Concurrency...
          .then(result => {
             covid19 = result[0].data;
             regioni = result[1].data;
