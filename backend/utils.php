@@ -30,7 +30,7 @@ function getLastElements($arr, $limit)
    $len = count($arr);
    $limit_arr = [];
    for ($i = 0; ($i < $limit); $i++) {
-	  $current = ($i+1);
+      $current = ($i + 1);
       $index = ($len - $current);
       $data = $arr[$index];
       array_push($limit_arr, $data);
@@ -38,6 +38,14 @@ function getLastElements($arr, $limit)
    return $limit_arr;
 }
 
-$funcName = 'str_getcsv';
+function jsonOutput($json)
+{
+   $result = ('<pre>' . $json . '<pre>');
+   echo $result;
+}
 
-?>
+$url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv';
+
+$limit = 10;
+
+$funcName = 'str_getcsv';

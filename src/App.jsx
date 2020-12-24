@@ -20,7 +20,7 @@ class App extends React.Component {
       const
          andamentoNazionale = axios.get(endPoint),
          andamentoRegioni = axios.get(endPointRegioni);
-      Promise.all([andamentoNazionale, andamentoRegioni]) // In Concurrency...
+      Promise.all([andamentoNazionale, andamentoRegioni]) // 2 Async HTTP GET requests In Concurrency...
          .then(result => {
             covid19 = result[0].data;
             regioni = result[1].data;
@@ -55,19 +55,31 @@ class App extends React.Component {
       );
    }
    getCovid19(covid19) {
-      console.log(covid19);
-      const __covid19__ = { covid19: covid19 };
-      this.setState(__covid19__);
+      try {
+         console.log(covid19);
+         const __covid19__ = { covid19: covid19 };
+         this.setState(__covid19__);
+      } catch (err) {
+         console.error(err);
+      }
    }
    getRegioni(regioni) {
-      console.log(regioni);
-      const __regioni__ = { regioni: regioni };
-      this.setState(__regioni__);
+      try {
+         console.log(regioni);
+         const __regioni__ = { regioni: regioni };
+         this.setState(__regioni__);
+      } catch (err) {
+         console.error(err);
+      }
    }
    handleError(error) {
-      console.error(error);
-      const getErr = { reqERR: true };
-      this.setState(getErr);
+      try {
+         console.error(error);
+         const getErr = { reqERR: true };
+         this.setState(getErr);
+      } catch (err) {
+         console.error(err);
+      }
    }
 }
 
