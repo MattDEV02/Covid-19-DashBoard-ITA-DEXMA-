@@ -42,6 +42,9 @@ $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento
 
 $limit = 10;
 
-$funcName = 'str_getcsv';
+$exceptionMsg = 
+   '<h1 style="color: #ff0000">
+   <br/> CONNECTION ERROR.
+   </h1>';
 
-?>
+$funcName = 'str_getcsv';

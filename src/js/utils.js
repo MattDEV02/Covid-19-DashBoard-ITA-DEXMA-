@@ -8,11 +8,19 @@ const endPoint = String(protocol + '://' + host + ':' + port + route);
 
 const endPointRegioni = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json';
 
+const errorMsg = 'CONNECTION ERROR , Impossibile caricare l\'Output / aggiornare lo State.';
+
+const isValidData = data => {
+   const result = (data !== null && data !== undefined && data !== '');
+   return result;
+}
 
 export default endPoint;
 
 export {
-   endPointRegioni
+   endPointRegioni,
+   isValidData,
+   errorMsg
 };
 
 /*

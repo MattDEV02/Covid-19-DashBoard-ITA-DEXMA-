@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
-import endPoint, { endPointRegioni } from './js/utils';
+import endPoint, { endPointRegioni, isValidData, errorMsg } from './js/utils';
 import './css/index.css';
 
 
@@ -56,30 +56,30 @@ class App extends React.Component {
    }
    getCovid19(covid19) {
       try {
-         console.log(covid19);
+         if (!isValidData(covid19)) throw new Error(errorMsg);
          const __covid19__ = { covid19: covid19 };
          this.setState(__covid19__);
-      } catch (err) {
-         console.error(err);
+      } catch (error) {
+         console.error(error.message);
+      } finally {
+         console.log(covid19);
       }
    }
    getRegioni(regioni) {
       try {
-         console.log(regioni);
+         if (!isValidData(regioni)) throw new Error(errorMsg);
          const __regioni__ = { regioni: regioni };
          this.setState(__regioni__);
-      } catch (err) {
-         console.error(err);
+      } catch (error) {
+         console.error(error.message);
+      } finally {
+         console.log(regioni);
       }
    }
    handleError(error) {
-      try {
-         console.error(error);
-         const getErr = { reqERR: true };
-         this.setState(getErr);
-      } catch (err) {
-         console.error(err);
-      }
+      console.error(error);
+      const getErr = { reqERR: true };
+      this.setState(getErr);
    }
 }
 
