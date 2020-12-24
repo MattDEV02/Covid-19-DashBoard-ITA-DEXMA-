@@ -6,9 +6,17 @@ const colors = {
 
 const title = 'Andamento Curva Nuovi Positivi Covid19 Italia';
 
+const getLegendFromTitle = title => {
+   let legend = title.replace('Andamento Curva ', '');
+   legend = legend.replace(' Covid19 Italia', '');
+   return legend;
+};
+
+const legend = getLegendFromTitle(title);
+
 const data = {
    datasets: [{
-      label: 'Nuovi Positivi',
+      label: legend,
       backgroundColor: colors.darkred,
       borderColor: colors.gold,
       borderWidth: 0.5,

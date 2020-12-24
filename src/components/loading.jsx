@@ -14,7 +14,7 @@ class Loading extends React.Component {
                   reqERR ?
                      <React.StrictMode>
                         <div id='err'>
-                           <h1>Richiesta al Server fallita , Risposta non Ricevuta.</h1>
+                           <h1>Richiesta al Server fallita , Risposta Ricevuta non Valida.</h1>
                            <br />
                            <h1>Per maggiori Informazioni visualizzare il messaggio di Errore nella Console.</h1>
                         </div>
