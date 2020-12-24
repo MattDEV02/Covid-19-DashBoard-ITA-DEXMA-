@@ -13,3 +13,5 @@ try {
 } finally {
    echo ($json);
 }
+
+?>

@@ -24,7 +24,7 @@ class Chart extends React.Component {
          <React.StrictMode>
             <div className='col-12 mt-5' id='chart-container'>
                <div className='row'>
-                  <ReactTooltip id={tooltipID} place='top' textColor={colors.gold} backgroundColor={colors.darkred} >Try to change Chart Type !</ReactTooltip>
+                  <ReactTooltip id={tooltipID} place='top' textColor={colors.gold} backgroundColor={colors.darkred} >Cambia il Tipo di Grafico !</ReactTooltip>
                   <select className='form-control-sm' onChange={e => this.handleSelect(e)} data-tip='' data-for={tooltipID}>
                      <option value='bar'>Barre Verticali</option>
                      <option value='horizontal-bar'>Barre Orizzontali</option>
