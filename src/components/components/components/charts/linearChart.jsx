@@ -9,7 +9,11 @@ class LinearChart extends React.Component {
    render() {
       const config = this.props.config;
       return (
-         <Line data={config.data} options={config.options} height={config.height} />
+         <Line
+            data={config.data}
+            options={config.options}
+            height={config.height}
+         />
       );
    }
 }

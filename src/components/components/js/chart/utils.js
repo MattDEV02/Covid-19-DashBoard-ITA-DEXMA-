@@ -1,4 +1,4 @@
-const colors = {
+const default_colors = {
    darkred: '#8b0000',
    gold: '#d4af37',
    white: '#ffffff'
@@ -17,10 +17,10 @@ const legend = getLegendFromTitle(title);
 const data = {
    datasets: [{
       label: legend,
-      backgroundColor: colors.darkred,
-      borderColor: colors.gold,
+      backgroundColor: default_colors.darkred,
+      borderColor: default_colors.gold,
       borderWidth: 0.5,
-      pointBackgroundColor: colors.gold,
+      pointBackgroundColor: default_colors.gold,
       pointRadius: 3,
    }]
 };
@@ -28,7 +28,7 @@ const data = {
 const options = {
    legend: {
       labels: {
-         fontColor: colors.white,
+         fontColor: default_colors.white,
          fontSize: 14,
       }
    },
@@ -55,8 +55,17 @@ const setConfig = dati => {
 const type = { // Like an Enum
    line: 'line',
    bar: 'bar',
-   horizontalBar: 'horizontal-bar'
+   horizontalBar: 'horizontal-bar',
+   radar: 'radar',
+   pie: 'pie',
+   doughnut: 'doughnut',
+   polar: 'polar'
 };
+
+const isMulticolor = type => {
+   const result = (type === 'pie' || type === 'doughnut' || type === 'polar');
+   return result;
+}
 
 const tooltipID = 'select-chart-type';
 
@@ -64,7 +73,8 @@ export default config;
 
 export {
    setConfig,
-   colors,
+   isMulticolor,
+   default_colors,
    type,
    tooltipID
 };

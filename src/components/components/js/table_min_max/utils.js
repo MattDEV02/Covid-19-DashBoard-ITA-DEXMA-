@@ -2,12 +2,24 @@ import {
    formatData
 } from '../table_data/utils';
 
+const randomColor = () => {
+   const
+      hex = 0xffffff,
+      random = Math.random();
+   const x = Math.round((hex * random)).toString(16);
+   const y = 6 - x.length;
+   const z = "000000".substring(0, y);
+   const code = String(z + x);
+   const result = ('#' + code);
+   return result;
+};
 
 let
    nuovi_positivi = [],
    ingressi_terapia_intensiva = [],
    variazioni_totale_positivi = [],
-   date = [];
+   date = [],
+   colors = [];
 
 const arrayFetch = dati => {
    if (nuovi_positivi.length === 0) {
@@ -16,6 +28,7 @@ const arrayFetch = dati => {
          ingressi_terapia_intensiva.push(row.ingressi_terapia_intensiva);
          variazioni_totale_positivi.push(row.variazione_totale_positivi);
          date.push(formatData(row.data));
+         colors.push(randomColor());
       });
    }
    const covid19 = {
@@ -96,5 +109,6 @@ export {
    covid19Interval,
    covid19Total,
    tooltipID,
-   BgInfo
+   BgInfo,
+   colors
 };
