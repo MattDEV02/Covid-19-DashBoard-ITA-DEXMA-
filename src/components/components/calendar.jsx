@@ -17,7 +17,9 @@ class Calendar extends React.Component {
       return (
          <React.StrictMode>
             <div className='col-12 mt-5' data-tip='' data-for={tooltipID}>
-               <ReactTooltip id={tooltipID} textColor='#007bff'>Questo Calendario riporta le Date in cui c'è stata una Variazione dei Positivi Totali minore-uguale di Zero</ReactTooltip>
+               <ReactTooltip id={tooltipID} textColor='#007bff'>
+                  Questo Calendario riporta le Date in cui c'è stata una Variazione dei Positivi Totali minore-uguale di Zero
+               </ReactTooltip>
                <FullCalendar
                   plugins={[dayGridPlugin]}
                   initialView='dayGridMonth'

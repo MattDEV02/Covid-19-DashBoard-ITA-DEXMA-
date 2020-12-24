@@ -4,9 +4,11 @@ const colors = {
    white: '#ffffff'
 };
 
+const title = 'Andamento Curva Nuovi Positivi Covid19 Italia';
+
 const data = {
    datasets: [{
-      label: 'Legenda',
+      label: 'Nuovi Positivi',
       backgroundColor: colors.darkred,
       borderColor: colors.gold,
       borderWidth: 0.5,
@@ -24,7 +26,7 @@ const options = {
    },
    title: {
       display: true,
-      text: 'Andamento Curva Nuovi Positivi Covid19 Italia', //...
+      text: title, //...
    }
 };
 

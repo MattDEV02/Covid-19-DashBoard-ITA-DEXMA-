@@ -15,7 +15,7 @@ class Map extends React.Component {
          <div className='col-12 mt-5'>
             <div className="row justify-content-center">
                <h1 className='text-danger'>Hover an Italian Region
-                  <i class='fas fa-pizza-slice ml-3'></i>
+                  <i className='fas fa-pizza-slice ml-3'></i>
                </h1>
             </div>
             <div className='mt-3'>
