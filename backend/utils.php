@@ -47,5 +47,5 @@ $limit = 10;
 
 $exceptionMsg =
    '<h1 style="color: #ff0000">
-   <br/> CONNECTION ERROR.
+      <br/> CONNECTION ERROR.
    </h1>';

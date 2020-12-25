@@ -34,7 +34,7 @@ const options = {
    },
    title: {
       display: true,
-      text: title, //...
+      text: title,
    }
 };
 
@@ -47,12 +47,15 @@ const config = {
 };
 
 const setConfig = dati => {
-   config.data.labels = dati.date;
-   config.data.datasets[0].data = dati.nuovi_positivi;
+   let
+      labels = dati.date,
+      data = dati.nuovi_positivi;
+   config.data.labels = labels;
+   config.data.datasets[0].data = data;
    return config;
 };
 
-const type = { // Like an Enum
+const type = {  // Like an Enum...
    line: 'line',
    bar: 'bar',
    horizontalBar: 'horizontal-bar',
