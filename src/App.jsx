@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
-import endPoint, { endPointRegioni, isValidData, errorMsg } from './js/utils';
+import endPoint, { urlRegioni, isValidData, errorMsg } from './js/utils';
 import './css/index.css';
 
 
@@ -19,7 +19,7 @@ class App extends React.Component {
    componentDidMount() {
       const
          andamentoNazionale = axios.get(endPoint),
-         andamentoRegioni = axios.get(endPointRegioni);
+         andamentoRegioni = axios.get(urlRegioni);
       Promise.all([andamentoNazionale, andamentoRegioni]) // 2 Async HTTP GET requests In Concurrency...
          .then(result => {
             covid19 = result[0].data;

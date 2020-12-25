@@ -16,8 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 //-------------------------------------------------------------------------------------------------------------
 
-function getCSV($csv)
+function getCSV($file)
 {
+
+   $funcName = 'str_getcsv';
+   $csv = array_map($funcName, $file);
    array_walk($csv, function (&$a) use ($csv) {
       $a = array_combine($csv[0], $a);
    });
@@ -42,9 +45,7 @@ $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento
 
 $limit = 10;
 
-$exceptionMsg = 
+$exceptionMsg =
    '<h1 style="color: #ff0000">
    <br/> CONNECTION ERROR.
    </h1>';
-
-$funcName = 'str_getcsv';
