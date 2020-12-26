@@ -27,6 +27,33 @@ Covid-19 data of the Italians Regions for generate a simple dynamic Map.
 
 The layout is responsive.
 
+
+### Languages , Framworks , Libraries , Tools used:
+
+    Back-end:
+
+        - PHP (no libraries).
+
+    Front-end:
+
+        - React-JS.
+
+    	- Javascript ( Babel , ES6 )
+
+        - Bootstrap.
+
+        - SASS.
+
+    	- HTML
+
+    Other:
+
+        GIT , GITHUB , Xampp for Apache.
+
+    	Visual studio code on Windows 10.
+
+    	Atom on Ubuntu desktop 20.10.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -102,29 +129,3 @@ This is the most important command , It run concurrently this commands:
     2 ) `npm run backend`.
 
 You can start the project with only this command.
-
-### Languages , Framworks , Libraries , Tools used:
-
-    Back-end:
-
-        - PHP (no libraries).
-
-    Front-end:
-
-        - React-JS.
-
-    	- Javascript ( Babel , ES6 )
-
-        - Bootstrap.
-
-        - SASS.
-
-    	- HTML
-
-    Other:
-
-        GIT , GITHUB , Xampp for Apache.
-
-    	Visual studio code on Windows 10.
-
-    	Atom on Ubuntu desktop 20.10.
