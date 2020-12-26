@@ -12,8 +12,8 @@ String.prototype.remove = function (str_to_remove) {
 };
 
 const getLegendFromTitle = title => {
-   let result = title.remove('Andamento Curva ');
-   result = result.remove(' Covid19 Italia');
+   const pattern = /Andamento Curva |Covid19 Italia/g;
+   const result = title.remove(pattern);
    return result;
 };
 
