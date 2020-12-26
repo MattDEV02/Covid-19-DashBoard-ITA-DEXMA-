@@ -4,12 +4,11 @@
 
 ## Description:
 
-At the page loading the Client makes 2 Async HTTP Request with GET method in concurrently at http://localhos:8080/covid19/backend and 
-https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json
+At the page loading the Client makes 2 Async HTTP Request with GET method in concurrently at 
 
-, If the Request returns an Error we will view an Error message , else we will view the Output Data with tables ,
+http://localhos:8080/covid19/backend and https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json
 
-charts , calendars , maps...
+, If the Request returns an Error we will view an Error message , else we will view the Output Data with tables , charts , calendars , maps...
 
 It would has been better to set port 80 since It is the standard port of the HTTP protocol but Xampp didn't make me set it up.
 
