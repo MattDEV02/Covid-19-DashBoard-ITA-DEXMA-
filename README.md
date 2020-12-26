@@ -26,6 +26,8 @@ In the JSON file at https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/da
 
 Covid-19 data of the Italians Regions for generate a simple dynamic Map.
 
+The layout is responsive.
+
 ## Available Scripts
 
 In the project directory, you can run:
