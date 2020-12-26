@@ -78,7 +78,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### `npm run backend`
 
-This command will start Apache Web Server in background (only Windows system).
+This command will start Apache Web Server in background (this will work only in my PC).
 
 ### `npm run frontend`
 

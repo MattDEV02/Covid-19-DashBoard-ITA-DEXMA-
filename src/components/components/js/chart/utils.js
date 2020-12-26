@@ -52,7 +52,7 @@ const config = {
 };
 
 const setConfig = dati => {
-   let
+   const
       labels = dati.date,
       data = dati.nuovi_positivi;
    config.data.labels = labels;
