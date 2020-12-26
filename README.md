@@ -122,7 +122,7 @@ You can start the project with only this command.
 
     Other:
 
-        GIT , GITHUB.
+        GIT , GITHUB , Xampp for Apache.
 
     	Visual studio code on Windows 10.
 
