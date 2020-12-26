@@ -6,10 +6,15 @@ const default_colors = {
 
 const title = 'Andamento Curva Nuovi Positivi Covid19 Italia';
 
+String.prototype.remove = function (str_to_remove) {
+   const result = this.replace(str_to_remove, '');
+   return result;
+};
+
 const getLegendFromTitle = title => {
-   let legend = title.replace('Andamento Curva ', '');
-   legend = legend.replace(' Covid19 Italia', '');
-   return legend;
+   let result = title.remove('Andamento Curva ');
+   result = result.remove(' Covid19 Italia');
+   return result;
 };
 
 const legend = getLegendFromTitle(title);
@@ -55,7 +60,7 @@ const setConfig = dati => {
    return config;
 };
 
-const type = {  // Like an Enum...
+const type = { // Like an Enum...
    line: 'line',
    bar: 'bar',
    horizontalBar: 'horizontal-bar',
