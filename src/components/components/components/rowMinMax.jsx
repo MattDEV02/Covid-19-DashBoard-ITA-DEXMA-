@@ -1,5 +1,5 @@
 import React from 'react';
-import { covid19Interval, covid19Total ,BgInfo } from '../js/table_min_max/utils';
+import { covid19Interval, covid19Total, BgInfo } from '../js/table_min_max/utils';
 
 
 class RowMinMax extends React.Component {

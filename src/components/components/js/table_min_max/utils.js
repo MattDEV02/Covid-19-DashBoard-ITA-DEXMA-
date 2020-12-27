@@ -2,13 +2,14 @@ import {
    formatData
 } from '../table_data/utils';
 
+
 const randomColor = () => {
    const
       hex = 0xffffff,
       random = Math.random();
    const x = Math.round((hex * random)).toString(16);
-   const y = 6 - x.length;
-   const z = "000000".substring(0, y);
+   const y = (6 - x.length);
+   const z = '000000'.substring(0, y);
    const code = String(z + x);
    const result = ('#' + code);
    return result;
@@ -27,8 +28,10 @@ const arrayFetch = dati => {
          nuovi_positivi.push(row.nuovi_positivi);
          ingressi_terapia_intensiva.push(row.ingressi_terapia_intensiva);
          variazioni_totale_positivi.push(row.variazione_totale_positivi);
-         date.push(formatData(row.data));
-         colors.push(randomColor());
+         const formattedData = formatData(row.data);
+         date.push(formattedData);
+         const color = randomColor();
+         colors.push(color);
       });
    }
    const covid19 = {

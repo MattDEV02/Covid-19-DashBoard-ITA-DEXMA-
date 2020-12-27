@@ -28,7 +28,9 @@ class TableMinMax extends React.Component {
                      </tr>
                   </thead>
                   <tbody>
-                     <RowMinMax dati={covid19Calculated} />
+                     <RowMinMax
+                        dati={covid19Calculated}
+                     />
                   </tbody>
                </table>
             </div>

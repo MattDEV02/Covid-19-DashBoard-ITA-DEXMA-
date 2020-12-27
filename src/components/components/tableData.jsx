@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import RowData from './components/rowData';
-import { tables, tooltipID , calculator } from './js/table_data/utils';
+import { tables, tooltipID, calculator } from './js/table_data/utils';
 import './css/table_data/index.css';
 
 
@@ -29,7 +29,12 @@ class TableData extends React.Component {
                   </thead>
                   <tbody>
                      {
-                        covid19.map(row => <RowData covid19={row} key={row.data} />)
+                        covid19.map(row =>
+                           <RowData
+                              covid19={row}
+                              key={row.data}
+                           />
+                        )
                      }
                   </tbody>
                </table>

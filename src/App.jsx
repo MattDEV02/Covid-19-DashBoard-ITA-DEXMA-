@@ -42,7 +42,7 @@ class App extends React.Component {
             <div className='container-fluid'>
                <div className='row justify-content-center'>
                   {
-                     (covid19State && regioniState) ?  /* Check if the Output is Ready */
+                     (covid19State && regioniState) ?  /* Check if the Data is Ready */
                         <Body
                            covid19={covid19State}
                            regioni={regioniState}

@@ -1,22 +1,15 @@
 <?php
 
 /* CORS POlICY */
-//-----------------------------------------------------------------------------------------------------
-if (isset($_SERVER['HTTP_ORIGIN'])) {
-   header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
-   header('Access-Control-Allow-Credentials: true');
-   header('Access-Control-Max-Age: 86400');
-}
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-   if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
-      header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-   if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
-      header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
-   exit(0);
-}
 //-------------------------------------------------------------------------------------------------------------
 
-function getCSV($file)
+header('Access-Control-Allow-Origin: *');
+
+//-------------------------------------------------------------------------------------------------------------
+/* CORS POlICY */
+
+
+function getCSV($file)  // Return a normal Array of Associative-Array where the Column is key and Row is a Record of the Array. 
 {
 
    $funcName = 'str_getcsv';
@@ -24,28 +17,29 @@ function getCSV($file)
    array_walk($csv, function (&$a) use ($csv) {
       $a = array_combine($csv[0], $a);
    });
-   array_shift($csv);
+   array_shift($csv); // Remove the Header Row...
    return $csv;
 }
 
-function getLastElements($arr, $limit)
+function getLastElements($arr, $limit)  // Return N Last elements of an Array...
 {
    $len = count($arr);
    $limit_arr = [];
-   for ($i = 0; ($i < $limit); $i++) {
+   $i = 0;
+   for (; ($i < $limit); $i++) {
       $current = ($i + 1);
       $index = ($len - $current);
       $data = $arr[$index];
-      array_push($limit_arr, $data);
+      $limit_arr[] = $data;
    }
    return $limit_arr;
 }
 
 $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv';
 
-$limit = 10;
+$limit = 10; // It is a parameter used in the index.php File
 
 $exceptionMsg =
    '<h1 style="color: #ff0000">
       <br/> CONNECTION ERROR.
-   </h1>';
+   </h1>'; // If we get an Error....

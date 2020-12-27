@@ -15,3 +15,5 @@ try {
 } finally {
    echo $json; // Print the final Result
 }
+
+?>
