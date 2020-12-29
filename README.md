@@ -27,6 +27,8 @@ Covid-19 data of the Italians Regions for generate a simple dynamic Map.
 
 The layout is responsive.
 
+Try to hover all the elements of the Web-App !
+
 
 ### Languages , Framworks , Libraries , Tools used:
 
