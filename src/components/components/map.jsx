@@ -13,8 +13,8 @@ class Map extends React.Component {
       const mapData = getMapData(regioni);
       return (
          <div className='col-12 mt-5'>
-            <div className="row justify-content-center">
-               <h1 className='text-danger'>Hover an Italian Region
+            <div className='row justify-content-center'>
+               <h1 className='text-danger'>Passa il cursone su una Regione italiana
                   <i className='fas fa-pizza-slice ml-3'></i>
                </h1>
             </div>
