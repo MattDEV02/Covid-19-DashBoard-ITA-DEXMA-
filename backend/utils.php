@@ -43,3 +43,5 @@ $exceptionMsg =
    '<h1 style="color: #ff0000">
       <br/> CONNECTION ERROR.
    </h1>'; // If we get an Error....
+   
+?>
