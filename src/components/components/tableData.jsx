@@ -12,7 +12,7 @@ class TableData extends React.Component {
    render() {
       const covid19 = this.props.covid19;
       return (
-         <div className='col-xs-12 col-sm-12 col-md-11 col-lg-11 col-xl-10 mt-5'>
+         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 mt-5'>
             <div className={tables.row}>
                <ReactTooltip id={tooltipID}>Questa Tabella riporta alcuni Dati sul Covid19 Relativi agli ultimi 10 Giorni</ReactTooltip>
                <table className={tables.tab} data-tip='' data-for={tooltipID}>
