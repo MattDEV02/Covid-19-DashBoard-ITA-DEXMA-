@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
-import endPoint, { urlRegioni, isValidData } from './js/utils';
+import endPoint, { urlRegioni, isValidData, ErrMsg } from './js/utils';
 import './css/index.css';
 
 
@@ -31,7 +31,10 @@ class App extends React.Component {
             if ((isValidData(covid19)) && (isValidData(regioni))) {
                this.getCovid19(covid19);
                this.getRegioni(regioni);
-            } 
+            } else {
+               const error = new Error(ErrMsg);
+               this.handleError(error);
+            }
          });
    }
    render() {
@@ -68,9 +71,9 @@ class App extends React.Component {
       this.setState(__regioni__);
    }
    handleError(error) {
-      console.error(error.message);
       const getErr = { reqERR: true };
       this.setState(getErr);
+      throw error; // Stop Execution.
    }
 }
 
