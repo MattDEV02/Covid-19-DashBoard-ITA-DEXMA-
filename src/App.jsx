@@ -22,6 +22,7 @@ class App extends React.Component {
          andamentoRegioni = axios.get(urlRegioni);
       Promise.all([andamentoNazionale, andamentoRegioni]) // 2 Async HTTP GET requests In Concurrency...
          .then(result => {
+            console.log(result);
             covid19 = result[0].data;
             regioni = result[1].data;
          })
