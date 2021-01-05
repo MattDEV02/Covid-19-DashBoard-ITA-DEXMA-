@@ -35,7 +35,7 @@ function getLastElements($arr, $limit)  // Return N Last elements of an Array...
    return $limit_arr;
 }
 
-$url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv';
+$url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionle.csv';
 
 $limit = 10; // It is a parameter used in the index.php File
 

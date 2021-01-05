@@ -10,7 +10,7 @@ const endPoint = String((protocol + '://' + host + ':' + port + route + file));
 const urlRegioni = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json';
 
 const isValidData = data => {
-   const result = ((data !== null) && (data !== undefined) && (data !== '') && (data !== 0) && data !== false);
+   const result = ((data !== null) && (data !== undefined) && (data !== '') && (data !== 0) && (data !== false));
    return result;
 }
 
