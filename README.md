@@ -41,13 +41,13 @@ Try to hover over the items of the Web-App !
 
         - React-JS.
 
-    	- Javascript ( Babel , ES6 )
+    	- Javascript ( Babel , ES6 ).
 
         - Bootstrap.
 
         - SASS.
 
-    	- HTML
+    	- HTML.
 
     Other:
 
