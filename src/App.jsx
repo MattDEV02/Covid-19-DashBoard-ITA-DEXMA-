@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
-import endPoint, { urlRegioni, isValidData, errorMsg } from './js/utils';
+import endPoint, { urlRegioni, isValidData } from './js/utils';
 import './css/index.css';
 
 
@@ -27,8 +27,10 @@ class App extends React.Component {
          })
          .catch(error => this.handleError(error))
          .then(() => {
-            this.getCovid19(covid19);
-            this.getRegioni(regioni);
+            if ((isValidData(covid19)) && (isValidData(regioni))) {
+               this.getCovid19(covid19);
+               this.getRegioni(regioni);
+            } 
          });
    }
    render() {
@@ -55,29 +57,17 @@ class App extends React.Component {
       );
    }
    getCovid19(covid19) {
-      try {
-         if (!isValidData(covid19)) throw new Error(errorMsg);
-         const __covid19__ = { covid19: covid19 };
-         this.setState(__covid19__);
-      } catch (error) {
-         console.error(error.message);
-      } finally {
-         console.log(covid19);
-      }
+      console.log(covid19);
+      const __covid19__ = { covid19: covid19 };
+      this.setState(__covid19__);
    }
    getRegioni(regioni) {
-      try {
-         if (!isValidData(regioni)) throw new Error(errorMsg);
-         const __regioni__ = { regioni: regioni };
-         this.setState(__regioni__);
-      } catch (error) {
-         console.error(error.message);
-      } finally {
-         console.log(regioni);
-      }
+      console.log(regioni);
+      const __regioni__ = { regioni: regioni };
+      this.setState(__regioni__);
    }
    handleError(error) {
-      console.error(error);
+      console.error(error.message);
       const getErr = { reqERR: true };
       this.setState(getErr);
    }

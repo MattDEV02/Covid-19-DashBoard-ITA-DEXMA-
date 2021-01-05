@@ -11,7 +11,7 @@ try {
    $limit_data = getLastElements($data, $limit); // Last 10 days.
    $json = json_encode($limit_data); // Array of Associative-Array to JSON.
 } catch (Exception $e) {
-   echo $e->getMessage(); // Print the Message of the Exceptionn throwed.
+    die($e->getMessage()); // Print the Message of the Exceptionn throwed and Stop the Execution
 } finally {
    echo $json; // Print the final Result
 }
