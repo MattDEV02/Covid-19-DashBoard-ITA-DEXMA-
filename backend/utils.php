@@ -7,6 +7,9 @@ header('Access-Control-Allow-Origin: *');
 /* CORS POlICY */
 
 
+// The Type is Optional. 
+
+
 function getCSV(array $file): array  // Return a normal Array of Associative-Array where the Column is key and Row is a Record of the Array. 
 {
 
@@ -52,3 +55,5 @@ Copyright (c) The PHP Group
 Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 */
+
+?>
