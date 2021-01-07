@@ -1,19 +1,17 @@
 <?php
 
 /* CORS POlICY */
-//-------------------------------------------------------------------------------------------------------------
 
 header('Access-Control-Allow-Origin: *');
 
-//-------------------------------------------------------------------------------------------------------------
 /* CORS POlICY */
 
 
-function getCSV($file)  // Return a normal Array of Associative-Array where the Column is key and Row is a Record of the Array. 
+function getCSV(array $file): array  // Return a normal Array of Associative-Array where the Column is key and Row is a Record of the Array. 
 {
 
    $funcName = 'str_getcsv';
-   $csv = array_map($funcName, $file);
+   $csv = array_map($funcName, $file); // Apply str_getcsv function to all elements of the Array
    array_walk($csv, function (&$a) use ($csv) {
       $a = array_combine($csv[0], $a);
    });
@@ -21,7 +19,7 @@ function getCSV($file)  // Return a normal Array of Associative-Array where the 
    return $csv;
 }
 
-function getLastElements($arr, $limit)  // Return N Last elements of an Array...
+function getLastElements(array $arr, int $limit): array  // Return N Last elements of an Array...
 {
    $len = count($arr);
    $limit_arr = [];
@@ -39,9 +37,18 @@ $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento
 
 $limit = 10; // It is a parameter used in the index.php File
 
+$color = '#ff0000';
+
 $exceptionMsg =
-   '<h1 style="color: #ff0000">
+   "<h1 style='color: $color'>
       <br/> CONNECTION ERROR.
-   </h1>'; // If we get an Error....
-   
-?>
+   </h1>"; // If we get an Error....
+
+
+/* 
+
+PHP 7.4.7 (cli) (built: Jun  9 2020 13:35:39) ( NTS Visual C++ 2017 x86 )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+
+*/

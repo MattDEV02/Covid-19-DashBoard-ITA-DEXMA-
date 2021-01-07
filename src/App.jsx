@@ -61,19 +61,17 @@ class App extends React.Component {
       );
    }
    getCovid19(covid19) {
-      console.log(covid19);
       const __covid19__ = { covid19: covid19 };
       this.setState(__covid19__);
    }
    getRegioni(regioni) {
-      console.log(regioni);
       const __regioni__ = { regioni: regioni };
       this.setState(__regioni__);
    }
    handleError(error) {
       const getErr = { reqERR: true };
       this.setState(getErr);
-      throw error; // Stop Execution.
+      throw error; // Stop the Execution.
    }
 }
 
