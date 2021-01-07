@@ -38,17 +38,20 @@ function getLastElements(array $arr, int $limit): array  // Return N Last elemen
 
 $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv';
 
-$limit = 10; // It is a parameter used in the index.php File
+$limit = 10; // It is a parameter used in the index.php File (getLastElements function)
 
-$color = '#ff0000';
+$color = '#FF0000';
 
-$exceptionMsg =
+$errMsg = (
    "<h1 style='color: $color'>
-      <br/> CONNECTION ERROR.
-   </h1>"; // If we get an Error....
+      <br /> CONNECTION ERROR.
+   </h1>"
+); // If we get an Error....
 
 
 /* 
+
+php --version
 
 PHP 7.4.7 (cli) (built: Jun  9 2020 13:35:39) ( NTS Visual C++ 2017 x86 )
 Copyright (c) The PHP Group
