@@ -21,7 +21,7 @@ const tables = {
 
 const tooltipID = 'data-tab-tooltip';
 
-const calculator = 'fas fa-calculator ml-2';
+const calculator = 'fas fa-calculator ml-1';
 
 export {
    formatData,

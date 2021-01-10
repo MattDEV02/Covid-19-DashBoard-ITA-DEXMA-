@@ -101,6 +101,20 @@ const covid19Total = () => {
    return total;
 };
 
+const covid19Media = total => {
+   const days = 10;
+   const properties = ['nuovi_positivi', 'ingressi_terapia_intensiva', 'variazioni_totale_positivi'];
+   let
+      media = {},
+      i = 0;
+   for (const prop in total) { // For property in Object...
+      const result = (total[prop] / days);
+      media[properties[i]] = result;
+      i++;
+   }
+   return media;
+};
+
 const tooltipID = 'min-max';
 
 const BgInfo = 'bg-info';
@@ -111,6 +125,7 @@ export {
    arrayFetch,
    covid19Interval,
    covid19Total,
+   covid19Media,
    tooltipID,
    BgInfo,
    colors

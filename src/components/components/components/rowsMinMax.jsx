@@ -1,5 +1,5 @@
 import React from 'react';
-import { covid19Interval, covid19Total, BgInfo } from '../js/table_min_max/utils';
+import { covid19Interval, covid19Total, covid19Media, BgInfo } from '../js/table_min_max/utils';
 
 
 class RowMinMax extends React.Component {
@@ -10,7 +10,8 @@ class RowMinMax extends React.Component {
       const covid19Calculated = this.props.dati;
       const
          interval = covid19Interval(covid19Calculated),
-         total = covid19Total();
+         total = covid19Total(),
+         media = covid19Media(total);
       return (
          <React.StrictMode>
             <tr>
@@ -18,6 +19,7 @@ class RowMinMax extends React.Component {
                <td>{covid19Calculated.nuovi_positivi.min}</td>
                <td>{covid19Calculated.nuovi_positivi.max}</td>
                <td className={BgInfo}>{interval.nuovi_positivi}</td>
+               <td className={BgInfo}>{media.nuovi_positivi}</td>
                <td className={BgInfo}>{total.nuovi_positivi}</td>
             </tr>
             <tr>
@@ -25,6 +27,7 @@ class RowMinMax extends React.Component {
                <td>{covid19Calculated.ingressi_terapia_intensiva.min}</td>
                <td>{covid19Calculated.ingressi_terapia_intensiva.max}</td>
                <td className={BgInfo}>{interval.ingressi_terapia_intensiva}</td>
+               <td className={BgInfo}>{media.ingressi_terapia_intensiva}</td>
                <td className={BgInfo}>{total.ingressi_terapia_intensiva}</td>
             </tr>
             <tr>
@@ -32,6 +35,7 @@ class RowMinMax extends React.Component {
                <td>{covid19Calculated.variazioni_totale_positivi.min}</td>
                <td>{covid19Calculated.variazioni_totale_positivi.max}</td>
                <td className={BgInfo}>{interval.variazioni_totale_positivi}</td>
+               <td className={BgInfo}>{media.variazioni_totale_positivi}</td>
                <td className={BgInfo}>{total.variazioni_totale_positivi}</td>
             </tr>
          </React.StrictMode>
