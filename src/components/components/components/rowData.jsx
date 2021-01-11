@@ -16,8 +16,8 @@ class RowData extends React.Component {
             <td>{formattedData}</td>
             <td>{covid19.deceduti}</td>
             <td>{covid19.dimessi_guariti}</td>
-            <td>{covid19.totale_positivi}</td>
             <td>{covid19.nuovi_positivi}</td>
+            <td>{covid19.totale_positivi}</td>
             <td>{covid19.tamponi_giornalieri}</td>
             <td>{covid19.tamponi}</td>
             <td className={BgInfo}>{(rapporto + ' %')}</td>
