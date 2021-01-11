@@ -10,7 +10,7 @@ const formatData = data => {
 const percentuale = (n1, n2) => {
    const div = (n1 / n2);
    const percent = (div * 100);
-   const percentFixed = percent.toFixed(4);
+   const percentFixed = percent.toFixed(2);
    return percentFixed;
 };
 

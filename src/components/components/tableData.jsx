@@ -23,6 +23,7 @@ class TableData extends React.Component {
                         <th>Dimessi Guariti Tot.</th>
                         <th>Positivi Tot.</th>
                         <th>Nuovi Positivi</th>
+                        <th>Tamponi</th>
                         <th>Tamponi Tot.</th>
                         <th>Rapporto<i className={calculator}></i></th>
                      </tr>

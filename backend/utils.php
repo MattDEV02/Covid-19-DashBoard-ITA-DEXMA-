@@ -22,18 +22,46 @@ function getCSV(array $file): array  // Return a normal Array of Associative-Arr
    return $csv;
 }
 
+function getTamponiTot(array $covid19): array // Push "tamponi" in a normal Array
+{
+   $tamponiTot = [];
+   $key = 'tamponi';
+   foreach ($covid19 as $row) {
+      $tamponi = $row[$key];
+      $tamponiTot[] = $tamponi;
+   }
+   return $tamponiTot;
+}
+
+function getTamponiGiornalieri(array $covid19): array
+{
+   $tamponiTot = getTamponiTot($covid19);
+   $key = 'tamponi_giornalieri'; // Add new key to the Associative-Array
+   $days = count($tamponiTot);
+   $i = 0;
+   for (; ($i < ($days - 1)); $i++) {
+      $index = ($i + 1);
+      $current = current($tamponiTot); // Array Pointer...
+      $next = next($tamponiTot); // Array Pointer...
+      $tamponi_giornalieri = ($next - $current);
+      $covid19[$index][$key] = $tamponi_giornalieri; // Update the Array of Associative-Array 
+   }
+   return $covid19;
+};
+
 function getLastElements(array $arr, int $limit): array  // Return N Last elements of an Array...
 {
    $len = count($arr);
    $limit_arr = [];
    $i = 0;
    for (; ($i < $limit); $i++) {
-      $current = ($i + 1);
-      $index = ($len - $current);
+      $next = ($i + 1); // Or next function
+      $index = ($len - $next);
       $data = $arr[$index];
       $limit_arr[] = $data;
    }
-   return $limit_arr;
+   $result = array_reverse($limit_arr);
+   return $result;
 }
 
 $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv';
@@ -58,5 +86,3 @@ Copyright (c) The PHP Group
 Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 */
-
-?>
