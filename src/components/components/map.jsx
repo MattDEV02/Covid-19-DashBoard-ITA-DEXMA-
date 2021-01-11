@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
-import options, { getMapData } from './js/map/utils';
+import options, { getMapData } from './js/map/index';
 
 
 

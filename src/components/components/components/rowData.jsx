@@ -1,6 +1,6 @@
 import React from 'react';
-import { formatData, percentuale } from '../js/table_data/utils';
-import { BgInfo } from '../js/table_min_max/utils';
+import { formatData, percentuale } from '../js/table_data/index';
+import { BgInfo } from '../js/table_min_max/index';
 import '../css/table_data/index.css';
 
 class RowData extends React.Component {

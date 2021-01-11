@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import RowData from './components/rowData';
-import { tables, tooltipID, calculator } from './js/table_data/utils';
+import { tables, tooltipID, calculator } from './js/table_data/index';
 import './css/table_data/index.css';
 
 
@@ -19,12 +19,12 @@ class TableData extends React.Component {
                   <thead>
                      <tr>
                         <th>Data</th>
-                        <th>Decessi Tot.</th>
-                        <th>Dimessi Guariti Tot.</th>
-                        <th>Positivi Tot.</th>
+                        <th>Decessi Tot</th>
+                        <th>Dimessi Guariti Tot</th>
+                        <th>Positivi Tot</th>
                         <th>Nuovi Positivi</th>
                         <th>Tamponi</th>
-                        <th>Tamponi Tot.</th>
+                        <th>Tamponi Tot</th>
                         <th>Rapporto<i className={calculator}></i></th>
                      </tr>
                   </thead>

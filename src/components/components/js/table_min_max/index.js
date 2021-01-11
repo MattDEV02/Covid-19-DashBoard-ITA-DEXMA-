@@ -1,6 +1,6 @@
 import {
    formatData
-} from '../table_data/utils';
+} from '../table_data/index';
 
 
 const randomColor = () => {

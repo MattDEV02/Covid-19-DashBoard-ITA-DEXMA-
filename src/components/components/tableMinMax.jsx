@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import RowMinMax from './components/rowsMinMax';
-import calculate, { tooltipID } from './js/table_min_max/utils';
-import { tables, calculator } from './js/table_data/utils';
+import calculate, { tooltipID } from './js/table_min_max/index';
+import { tables, calculator } from './js/table_data/index';
 
 
 let covid19Calculated = null;

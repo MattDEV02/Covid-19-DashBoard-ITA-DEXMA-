@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
-import endPoint, { urlRegioni, isValidData, ErrMsg } from './js/utils';
+import endPoint, { urlRegioni, isValidData, ErrMsg } from './js/index';
 import './css/index.css';
 
 

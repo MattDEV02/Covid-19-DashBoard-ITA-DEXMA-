@@ -7,8 +7,8 @@ import RadarChart from './components/charts/radarChart';
 import PieChart from './components/charts/pieChart';
 import DoughnutChart from './components/charts/doughnutChart';
 import PolarChart from './components/charts/polarChart';
-import config, { setConfig, isMulticolor, type, tooltipID, default_colors } from './js/chart/utils';
-import { arrayFetch, colors } from './js/table_min_max/utils';
+import config, { setConfig, isMulticolor, type, tooltipID, default_colors } from './js/chart/index';
+import { arrayFetch, colors } from './js/table_min_max/index';
 import './css/chart/index.css';
 
 
