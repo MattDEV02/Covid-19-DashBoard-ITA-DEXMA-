@@ -20,7 +20,7 @@ class RowData extends React.Component {
             <td>{covid19.totale_positivi}</td>
             <td>{covid19.tamponi_giornalieri}</td>
             <td>{covid19.tamponi}</td>
-            <td className={BgInfo}>{(rapporto + ' %')}</td>
+            <td className={BgInfo}>{`${rapporto} %`}</td>
          </tr>
       );
    }
