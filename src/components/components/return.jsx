@@ -7,7 +7,7 @@ class Return extends React.Component {
             <div className='col-12 mt-5 mb-4'>
                 <div className='row justify-content-center'>
                     <a href='#root'>
-                        <b>CLICCA QUI PER TORNARE IN ALTO.</b>
+                        <b>CLICCA QUI PER TORNARE IN ALTO ^</b>
                     </a>
                 </div>
             </div>

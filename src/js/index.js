@@ -5,7 +5,7 @@ const
    route = '/covid19/backend/',
    file = 'index.php'; //optional...
 
-const endPoint = String((protocol + '://' + host + ':' + port + route + file));
+const endPoint = new String((protocol + '://' + host + ':' + port + route + file));
 
 const urlRegioni = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json';
 
