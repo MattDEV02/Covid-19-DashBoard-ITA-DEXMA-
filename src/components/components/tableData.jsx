@@ -10,7 +10,7 @@ class TableData extends React.Component {
       super(props);
    }
    render() {
-      const covid19 = this.props.covid19;
+      const covid19 = this.props.covid19.reverse();
       return (
          <div className='col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 mt-5'>
             <div className={tables.row}>
