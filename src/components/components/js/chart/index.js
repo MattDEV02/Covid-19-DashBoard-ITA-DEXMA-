@@ -1,7 +1,7 @@
 const default_colors = {
-   darkred: '#8b0000',
-   gold: '#d4af37',
-   white: '#ffffff'
+   darkred: '#8B0000',
+   gold: '#D4Af37',
+   white: '#FFFFFF'
 };
 
 const title = 'Andamento Curva Nuovi Positivi Covid19 Italia';
