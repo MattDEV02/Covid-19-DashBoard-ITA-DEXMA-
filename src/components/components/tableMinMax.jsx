@@ -30,6 +30,7 @@ class TableMinMax extends React.Component {
                   </thead>
                   <tbody>
                      <RowMinMax
+                        covid19={covid19}
                         dati={covid19Calculated}
                      />
                   </tbody>

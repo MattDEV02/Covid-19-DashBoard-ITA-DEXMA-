@@ -7,11 +7,13 @@ class RowMinMax extends React.Component {
       super(props);
    }
    render() {
-      const covid19Calculated = this.props.dati;
+      const
+         num = this.props.covid19.length,
+         covid19Calculated = this.props.dati;
       const
          interval = covid19Interval(covid19Calculated),
          total = covid19Total(),
-         media = covid19Media(total);
+         media = covid19Media(num, total);
       return (
          <React.StrictMode>
             <tr>

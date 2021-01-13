@@ -101,14 +101,13 @@ const covid19Total = () => {
    return total;
 };
 
-const covid19Media = total => {
-   const days = 10;
+const covid19Media = (num, total) => {
    const properties = ['nuovi_positivi', 'ingressi_terapia_intensiva', 'variazioni_totale_positivi'];
    let
       media = {},
       i = 0;
    for (const prop in total) { // For property in Object...
-      const result = (total[prop] / days);
+      const result = (total[prop] / num);
       media[properties[i]] = result;
       i++;
    }
