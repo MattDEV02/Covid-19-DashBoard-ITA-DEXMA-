@@ -66,7 +66,7 @@ function getLastElements(array $arr, int $limit): array  // Return N Last elemen
 
 $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv';
 
-$limit = 20; // It is a parameter used in the index.php File (getLastElements function)
+$limit = 10; // It is a parameter used in the index.php File (getLastElements function)
 
 $color = '#FF0000';
 
