@@ -49,9 +49,20 @@ function getTamponiGiornalieri(array $covid19): array
    return $covid19;
 };
 
+function checkGET_param(): int
+{
+   $default = 10;
+   $key = 'days';
+   $cond = ((!empty($_GET)) && (isset($_GET[$key])));
+   $days =  $cond ? $_GET[$key] : $default;
+   $result = is_numeric($days) ? $days : $default;
+   return $result;
+}
+
 function getLastElements(array $arr, int $limit): array  // Return N Last elements of an Array...
 {
    $len = count($arr);
+   if ($limit > $len) die('Limite Array Superato!');
    $limit_arr = [];
    $i = 0;
    for (; ($i < $limit); $i++) {
@@ -66,7 +77,7 @@ function getLastElements(array $arr, int $limit): array  // Return N Last elemen
 
 $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv';
 
-$limit = 10; // It is a parameter used in the index.php File (getLastElements function)
+$limit = checkGET_param(); // It is a parameter used in the index.php File (getLastElements function)
 
 $color = '#FF0000';
 

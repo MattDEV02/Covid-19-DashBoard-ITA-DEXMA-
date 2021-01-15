@@ -1,11 +1,14 @@
+const days = 10; // We can change this
+
 const
    protocol = 'http',
    host = '127.0.0.1',
    port = 8080,
    route = '/covid19/backend/',
-   file = 'index.php'; //optional...
+   file = 'index.php',
+   req_parameter = `?days=${days}`; //optional...
 
-const endPoint = new String((protocol + '://' + host + ':' + port + route + file));
+const endPoint = new String((protocol + '://' + host + ':' + port + route + file + req_parameter));
 
 const urlRegioni = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json';
 

@@ -113,7 +113,7 @@ const covid19Media = (num, total) => {
       media = {},
       i = 0;
    for (const prop in total) { // For property in Object...
-      const result = (total[prop] / num);
+      const result = (total[prop] / num).toFixed(2);
       media[properties[i]] = result;
       i++;
    }

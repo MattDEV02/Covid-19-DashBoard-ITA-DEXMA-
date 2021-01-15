@@ -20,7 +20,7 @@ class App extends React.Component {
       const
          andamentoNazionale = axios.get(endPoint),
          andamentoRegioni = axios.get(urlRegioni);
-	  const requests = [andamentoNazionale, andamentoRegioni];
+      const requests = [andamentoNazionale, andamentoRegioni];
       Promise.all(requests) // 2 Async HTTP GET requests In Concurrency...
          .then(responses => {
             console.log(responses);
