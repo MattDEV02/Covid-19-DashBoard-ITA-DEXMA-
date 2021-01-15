@@ -1,6 +1,6 @@
 import React from 'react';
 import TableData from './components/tableData';
-import TableMinMax from './components/tableMinMax';
+import TableCalcoli from './components/tableCalcoli';
 import Chart from './components/chart';
 import Calendar from './components/calendar';
 import Map from './components/map';
@@ -18,7 +18,7 @@ class Body extends React.Component {
       return (
          <React.StrictMode>
             <TableData covid19={covid19} />
-            <TableMinMax covid19={covid19} />
+            <TableCalcoli covid19={covid19} />
             <Chart covid19={covid19} />
             <Calendar covid19={covid19} />
             <Map regioni={regioni} />

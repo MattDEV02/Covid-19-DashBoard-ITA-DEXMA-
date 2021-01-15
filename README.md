@@ -19,7 +19,9 @@ dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv , puts the cont
 
 Associative-Array (key => Value , the Key is the Column) from which I will take the last 10 elements and finally convert It into a JSON
 
-that will printed with the "echo" keyword. There is also Error prevention.
+that will printed with the "echo" keyword. There is also Error prevention both in the frontend and in the backend. 
+
+We can also change the number of the days to view
 
 In the JSON file at https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json I take the
 

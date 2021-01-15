@@ -3,13 +3,25 @@ import {
 } from '../table_data/index';
 
 
+Array.prototype.sum = function () {
+   const intArr = this.map(elem => parseInt(elem));
+   const sum = intArr.reduce((a, b) => ((a + b)));
+   return sum;
+};
+
+Array.prototype.last = function () {
+   const index = (this.length - 1);
+   const result = this[index];
+   return result;
+};
+
 const randomColor = () => {
    const
       hex = 0xffffff,
       random = Math.random();
    const x = Math.round((hex * random)).toString(16);
    const y = (6 - x.length);
-   const z = '000000'.substring(0, y);
+   const z = ('000000').substring(0, y);
    const code = String(z + x);
    const result = ('#' + code);
    return result;
@@ -82,12 +94,6 @@ const covid19Interval = covid19 => {
    return interval;
 };
 
-Array.prototype.sum = function () {
-   const intArr = this.map(elem => parseInt(elem));
-   const sum = intArr.reduce((a, b) => ((a + b)));
-   return sum;
-};
-
 const covid19Total = () => {
    const
       nuovi_positiviSum = nuovi_positivi.sum(),
@@ -114,6 +120,20 @@ const covid19Media = (num, total) => {
    return media;
 };
 
+const covid19Increment = () => {
+   const penultimo_indice = (nuovi_positivi.length - 2);
+   const
+      nuovi_positiviIncrement = (nuovi_positivi.last() - nuovi_positivi[penultimo_indice]),
+      ingressi_terapia_intensivaIncrement = (ingressi_terapia_intensiva.last() - ingressi_terapia_intensiva[penultimo_indice]),
+      variazioni_totale_positiviIncrement = (variazioni_totale_positivi.last() - variazioni_totale_positivi[penultimo_indice]);
+   const increment = {
+      nuovi_positivi: nuovi_positiviIncrement,
+      ingressi_terapia_intensiva: ingressi_terapia_intensivaIncrement,
+      variazioni_totale_positivi: variazioni_totale_positiviIncrement
+   };
+   return increment;
+};
+
 const tooltipID = 'min-max';
 
 const BgInfo = 'bg-info';
@@ -125,6 +145,7 @@ export {
    covid19Interval,
    covid19Total,
    covid19Media,
+   covid19Increment,
    tooltipID,
    BgInfo,
    colors

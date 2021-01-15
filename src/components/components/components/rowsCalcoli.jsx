@@ -1,8 +1,8 @@
 import React from 'react';
-import { covid19Interval, covid19Total, covid19Media, BgInfo } from '../js/table_min_max/index';
+import { covid19Interval, covid19Total, covid19Media, covid19Increment, BgInfo } from '../js/table_calcoli/index';
 
 
-class RowMinMax extends React.Component {
+class RowsCalcoli extends React.Component {
    constructor(props) {
       super(props);
    }
@@ -13,7 +13,8 @@ class RowMinMax extends React.Component {
       const
          interval = covid19Interval(covid19Calculated),
          total = covid19Total(),
-         media = covid19Media(num, total);
+         media = covid19Media(num, total),
+         increment = covid19Increment();
       return (
          <React.StrictMode>
             <tr>
@@ -23,6 +24,7 @@ class RowMinMax extends React.Component {
                <td className={BgInfo}>{interval.nuovi_positivi}</td>
                <td className={BgInfo}>{media.nuovi_positivi}</td>
                <td className={BgInfo}>{total.nuovi_positivi}</td>
+               <td className={BgInfo}>{increment.nuovi_positivi}</td>
             </tr>
             <tr>
                <td>Ingressi in Terapia Intensiva</td>
@@ -31,6 +33,7 @@ class RowMinMax extends React.Component {
                <td className={BgInfo}>{interval.ingressi_terapia_intensiva}</td>
                <td className={BgInfo}>{media.ingressi_terapia_intensiva}</td>
                <td className={BgInfo}>{total.ingressi_terapia_intensiva}</td>
+               <td className={BgInfo}>{increment.ingressi_terapia_intensiva}</td>
             </tr>
             <tr>
                <td>Variazione Totale Positivi</td>
@@ -39,10 +42,11 @@ class RowMinMax extends React.Component {
                <td className={BgInfo}>{interval.variazioni_totale_positivi}</td>
                <td className={BgInfo}>{media.variazioni_totale_positivi}</td>
                <td className={BgInfo}>{total.variazioni_totale_positivi}</td>
+               <td className={BgInfo}>{increment.variazioni_totale_positivi}</td>
             </tr>
          </React.StrictMode>
       );
    }
 }
 
-export default RowMinMax;
+export default RowsCalcoli;
