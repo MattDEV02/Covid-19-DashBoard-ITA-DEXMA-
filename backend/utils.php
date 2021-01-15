@@ -68,8 +68,7 @@ function getLastElements(array $arr, int $limit): array  // Return N Last elemen
    for (; ($i < $limit); $i++) {
       $next = ($i + 1); // Or next function
       $index = ($len - $next);
-      $data = $arr[$index];
-      $limit_arr[] = $data;
+      $limit_arr[] = $arr[$index];
    }
    $result = array_reverse($limit_arr);
    return $result;
