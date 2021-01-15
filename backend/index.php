@@ -7,7 +7,7 @@ $json = '';
 
 try {
    $file = file($url);
-   if (!$file) throw new Exception($errMsg);  // If we got an Error - Problem ( Connection Error , File Deleted , ecc... ) ; this will stop the try execution and go to catch statement.
+   if (!$file) throw new Exception($errMsg);  // If we got an Error - Problem ( Connection Error , File Deleted , ecc... ) ; this will stop the try execution and go to the catch statement.
    $covid19 = getCSV($file);  // Normal Array to Normal Array of Associative-Array ( Column = key , Row = Record).
    $covid19_updated = getTamponiGiornalieri($covid19);  // Add "tamponi_giornaliery" Key
    $limit_covid19 = getLastElements($covid19_updated, $limit);  // Last 10 days...
