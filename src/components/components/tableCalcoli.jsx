@@ -45,6 +45,3 @@ class TableCalcoli extends React.Component {
 
 export default TableCalcoli;
 
-export {
-   covid19Calculated
-};
