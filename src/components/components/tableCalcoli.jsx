@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import RowsCalcoli from './components/rowsCalcoli';
 import calculate, { tooltipID } from './js/table_calcoli/index';
-import { tables, calculator } from './js/table_data/index';
+import tables, { calculator } from './js/table_data/index';
 
 
 let covid19Calculated = null;

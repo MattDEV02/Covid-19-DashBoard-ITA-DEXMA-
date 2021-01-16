@@ -1,13 +1,6 @@
 <?php
 
-/* CORS POlICY */
-
-header('Access-Control-Allow-Origin: *');
-
-/* CORS POlICY */
-
-
-// The Type is Optional. 
+header('Access-Control-Allow-Origin: *'); // CORS POlICY */
 
 
 function getCSV(array $file): array  // Return a normal Array of Associative-Array where the Column is key and Row is a Record of the Array. 
@@ -49,7 +42,7 @@ function getTamponiGiornalieri(array $covid19): array
    return $covid19;
 };
 
-function checkGET_param(): int
+function checkGET_parameter(): int
 {
    $default = 10;
    $key = 'days';
@@ -62,7 +55,7 @@ function checkGET_param(): int
 function getLastElements(array $arr, int $limit): array  // Return N Last elements of an Array...
 {
    $len = count($arr);
-   if ($limit > $len) die('Limite Array Superato!');
+   if (($limit > $len) || ($limit < 0)) die('Limite Array Superato!');
    $limit_arr = [];
    $i = 0;
    for (; ($i < $limit); $i++) {
@@ -76,15 +69,16 @@ function getLastElements(array $arr, int $limit): array  // Return N Last elemen
 
 $url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv';
 
-$limit = checkGET_param(); // It is a parameter used in the index.php File (getLastElements function)
+$limit = checkGET_parameter(); // It is a parameter used in the index.php File (getLastElements function)
 
 $color = '#FF0000';
 
-$errMsg = (
-   "<h1 style='color: $color'>
+$errMsg = ("<h1 style='color: $color'>
       <br /> CONNECTION ERROR.
-   </h1>"
-); // If we get an Error....
+   </h1>"); // If we get an Error....
+
+
+// The Type is Optional. 
 
 
 /* 
@@ -96,5 +90,3 @@ Copyright (c) The PHP Group
 Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 */
-
-?>

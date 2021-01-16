@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import RowData from './components/rowData';
-import { tables, tooltipID, calculator } from './js/table_data/index';
-import './css/table_data/index.css';
+import tables, { tooltipID, calculator } from './js/table_data/index';
+import './css/tables/index.css';
 
 
 class TableData extends React.Component {

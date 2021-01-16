@@ -23,10 +23,11 @@ const tooltipID = 'data-tab-tooltip';
 
 const calculator = 'fas fa-calculator ml-1';
 
+export default tables;
+
 export {
    formatData,
    percentuale,
-   tables,
    tooltipID,
    calculator
 };
