@@ -1,31 +1,11 @@
+import MinMax, {
+   getMin_or_Max,
+   randomColor,
+} from './utils';
 import {
    formatData
 } from '../table_data/index';
 
-
-Array.prototype.sum = function () {
-   const intArr = this.map(elem => parseInt(elem)); // All Array Element to Integer
-   const sum = intArr.reduce((a, b) => ((a + b)));
-   return sum;
-};
-
-Array.prototype.last = function () {
-   const index = (this.length - 1);
-   const result = this[index];
-   return result;
-};
-
-const randomColor = () => {
-   const
-      hex = 0XFFFFFF,
-      random = Math.random();
-   const x = Math.round((hex * random)).toString(16);
-   const y = (6 - x.length);
-   const z = ('000000').substring(0, y);
-   const code = new String(z + x);
-   const result = ('#' + code);
-   return result;
-};
 
 let
    nuovi_positivi = [],
@@ -58,26 +38,18 @@ const arrayFetch = dati => {
 
 const calculate = covid19 => {
    arrayFetch(covid19);
+   const isMinValue = true;
    const
-      minNuovi_positivi = Math.min(...nuovi_positivi),
-      maxNuovi_positivi = Math.max(...nuovi_positivi),
-      minIngressi_terapia_intensiva = Math.min(...ingressi_terapia_intensiva),
-      maxIngressi_terapia_intensiva = Math.max(...ingressi_terapia_intensiva),
-      minVariazioni_totale_positivi = Math.min(...variazioni_totale_positivi),
-      maxVariazioni_totale_positivi = Math.max(...variazioni_totale_positivi);
+      minNuovi_positivi = getMin_or_Max(nuovi_positivi, isMinValue),
+      maxNuovi_positivi = getMin_or_Max(nuovi_positivi),
+      minIngressi_terapia_intensiva = getMin_or_Max(ingressi_terapia_intensiva, isMinValue),
+      maxIngressi_terapia_intensiva = getMin_or_Max(ingressi_terapia_intensiva),
+      minVariazioni_totale_positivi = getMin_or_Max(variazioni_totale_positivi, isMinValue),
+      maxVariazioni_totale_positivi = getMin_or_Max(variazioni_totale_positivi);
    const covid19Calculated = {
-      nuovi_positivi: {
-         min: minNuovi_positivi,
-         max: maxNuovi_positivi
-      },
-      ingressi_terapia_intensiva: {
-         min: minIngressi_terapia_intensiva,
-         max: maxIngressi_terapia_intensiva
-      },
-      variazioni_totale_positivi: {
-         min: minVariazioni_totale_positivi,
-         max: maxVariazioni_totale_positivi
-      }
+      nuovi_positivi: new MinMax(minNuovi_positivi, maxNuovi_positivi),
+      ingressi_terapia_intensiva: new MinMax(minIngressi_terapia_intensiva, maxIngressi_terapia_intensiva),
+      variazioni_totale_positivi: new MinMax(minVariazioni_totale_positivi, maxVariazioni_totale_positivi)
    };
    return covid19Calculated;
 };
@@ -135,6 +107,7 @@ const covid19Increment = () => {
 const tooltipID = 'tooltip-calcoli';
 
 const BgInfo = 'bg-info';
+
 
 export default calculate;
 

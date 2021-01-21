@@ -49,7 +49,7 @@ function checkGET_parameter(): int
    $cond = ((!empty($_GET)) && (isset($_GET[$key])));
    $days =  $cond ? $_GET[$key] : $default;
    $result = is_numeric($days) ? $days : $default;
-   return $result;
+   return (int)$result; // casting
 }
 
 function getLastElements(array $arr, int $limit): array  // Return N Last elements of an Array...
@@ -73,9 +73,11 @@ $limit = checkGET_parameter(); // It is a parameter used in the index.php File (
 
 $color = '#FF0000';
 
-$errMsg = ("<h1 style='color: $color'>
+$errMsg = (
+"<h1 style='color: $color'>
       <br /> CONNECTION ERROR.
-   </h1>"); // If we get an Error....
+   </h1>"
+); // If we get an Error....
 
 
 // The Type is Optional. 
@@ -90,3 +92,5 @@ Copyright (c) The PHP Group
 Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 */
+
+?>

@@ -1,8 +1,9 @@
 import moment from 'moment';
 
 
-const formatData = data => {
-   const format = 'DD/MM/YYYY';
+const formatData = (data, format) => { // format is an optional parameter
+   const default_format = 'DD/MM/YYYY';
+   format = format ? format : default_format;
    const formatted = moment(data).format(format);
    return formatted;
 };
@@ -26,8 +27,8 @@ const calculator = 'fas fa-calculator ml-1';
 export default tables;
 
 export {
-   formatData,
    percentuale,
+   formatData,
    tooltipID,
    calculator
 };

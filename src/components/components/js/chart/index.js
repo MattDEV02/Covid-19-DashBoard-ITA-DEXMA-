@@ -1,20 +1,12 @@
+import title, {
+   getLegendFromTitle
+} from './utils';
+
+
 const default_colors = {
    darkred: '#8B0000',
    gold: '#D4Af37',
    white: '#FFFFFF'
-};
-
-const title = 'Andamento Curva Nuovi Positivi Covid19 Italia';
-
-String.prototype.remove = function (str_to_remove) {
-   const result = this.replace(str_to_remove, '');
-   return result;
-};
-
-const getLegendFromTitle = title => {
-   const pattern = (/Andamento Curva |Covid19 Italia/g);
-   const result = title.remove(pattern);
-   return result;
 };
 
 const legend = getLegendFromTitle(title);
@@ -60,7 +52,7 @@ const setConfig = dati => {
    return config;
 };
 
-const type = { // Like an Enum...
+const type = { // Like an Enum
    line: 'line',
    bar: 'bar',
    horizontalBar: 'horizontal-bar',
@@ -76,6 +68,7 @@ const isMulticolor = type => {
 }
 
 const tooltipID = 'select-chart-type';
+
 
 export default config;
 
