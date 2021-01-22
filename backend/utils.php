@@ -75,8 +75,8 @@ $color = '#FF0000';
 
 $errMsg = (
 "<h1 style='color: $color'>
-      <br /> CONNECTION ERROR.
-   </h1>"
+   <br /> CONNECTION ERROR.
+</h1>"
 ); // If we get an Error....
 
 

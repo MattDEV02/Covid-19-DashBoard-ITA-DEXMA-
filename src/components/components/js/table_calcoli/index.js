@@ -1,4 +1,5 @@
-import MinMax, {
+import Covid19, {
+   MinMax,
    getMin_or_Max,
    randomColor,
 } from './utils';
@@ -14,6 +15,12 @@ let
    date = [],
    colors = [];
 
+const tipologie = [
+   'Nuovi Positivi',
+   'Ingressi in Terapia Intensiva',
+   'Variazione Totale Positivi'
+];
+
 const arrayFetch = dati => {
    if (nuovi_positivi.length === 0) {
       dati.map(row => {
@@ -27,16 +34,16 @@ const arrayFetch = dati => {
          colors.push(color);
       });
    }
-   const covid19 = {
-      nuovi_positivi: nuovi_positivi,
-      ingressi_terapia_intensiva: ingressi_terapia_intensiva,
-      variazioni_totale_positivi: variazioni_totale_positivi,
-      date: date
-   };
+   const covid19 = new Covid19(
+      nuovi_positivi,
+      ingressi_terapia_intensiva,
+      variazioni_totale_positivi,
+      date
+   );
    return covid19;
 };
 
-const calculate = covid19 => {
+const calculateMinMax = covid19 => {
    arrayFetch(covid19);
    const isMinValue = true;
    const
@@ -46,33 +53,37 @@ const calculate = covid19 => {
       maxIngressi_terapia_intensiva = getMin_or_Max(ingressi_terapia_intensiva),
       minVariazioni_totale_positivi = getMin_or_Max(variazioni_totale_positivi, isMinValue),
       maxVariazioni_totale_positivi = getMin_or_Max(variazioni_totale_positivi);
-   const covid19MinMax = {
-      nuovi_positivi: new MinMax(
+   const
+      nuovi_positiviMinMax = new MinMax(
          minNuovi_positivi,
          maxNuovi_positivi
       ),
-      ingressi_terapia_intensiva: new MinMax(
+      ingressi_terapia_intensivaMinMax = new MinMax(
          minIngressi_terapia_intensiva,
          maxIngressi_terapia_intensiva
       ),
-      variazioni_totale_positivi: new MinMax(
+      variazioni_totale_positiviMinMax = new MinMax(
          minVariazioni_totale_positivi,
          maxVariazioni_totale_positivi
-      )
-   };
+      );
+   const covid19MinMax = new Covid19(
+      nuovi_positiviMinMax,
+      ingressi_terapia_intensivaMinMax,
+      variazioni_totale_positiviMinMax
+   );
    return covid19MinMax;
 };
 
 const covid19Interval = covid19 => {
    const
-      nuovi_positiviDiff = (covid19.nuovi_positivi.max - covid19.nuovi_positivi.min),
-      ingressi_terapia_intensivaDiff = (covid19.ingressi_terapia_intensiva.max - covid19.ingressi_terapia_intensiva.min),
-      variazioni_totale_positiviDiff = (covid19.variazioni_totale_positivi.max - covid19.variazioni_totale_positivi.min);
-   const interval = {
-      nuovi_positivi: nuovi_positiviDiff,
-      ingressi_terapia_intensiva: ingressi_terapia_intensivaDiff,
-      variazioni_totale_positivi: variazioni_totale_positiviDiff
-   };
+      nuovi_positiviDiff = covid19.nuovi_positivi.getInteval(),
+      ingressi_terapia_intensivaDiff = covid19.ingressi_terapia_intensiva.getInteval(),
+      variazioni_totale_positiviDiff = covid19.variazioni_totale_positivi.getInteval();
+   const interval = new Covid19(
+      nuovi_positiviDiff,
+      ingressi_terapia_intensivaDiff,
+      variazioni_totale_positiviDiff
+   );
    return interval;
 };
 
@@ -81,35 +92,34 @@ const covid19Total = () => {
       nuovi_positiviSum = nuovi_positivi.sum(),
       ingressi_terapia_intensivaSum = ingressi_terapia_intensiva.sum(),
       variazioni_totale_positiviSum = variazioni_totale_positivi.sum();
-   const total = {
-      nuovi_positivi: nuovi_positiviSum,
-      ingressi_terapia_intensiva: ingressi_terapia_intensivaSum,
-      variazioni_totale_positivi: variazioni_totale_positiviSum
-   };
+   const total = new Covid19(
+      nuovi_positiviSum,
+      ingressi_terapia_intensivaSum,
+      variazioni_totale_positiviSum
+   );
    return total;
 };
 
 const covid19Media = (num, total) => {
    let media = {};
-   for (const prop in total) { // for property in Object...
-      const result = (total[prop] / num);
-      const result_fixed = result.toFixed(2)
-      media[prop] = result_fixed;
+   for (const property in total) { // for property in Object...
+      const result = (total[property] / num);
+      const result_fixed = result.toFixed(2);
+      media[property] = result_fixed;
    }
    return media;
 };
 
 const covid19Increment = () => {
-   const penultimo_indice = (nuovi_positivi.length - 2);
    const
-      nuovi_positiviIncrement = (nuovi_positivi.last() - nuovi_positivi[penultimo_indice]),
-      ingressi_terapia_intensivaIncrement = (ingressi_terapia_intensiva.last() - ingressi_terapia_intensiva[penultimo_indice]),
-      variazioni_totale_positiviIncrement = (variazioni_totale_positivi.last() - variazioni_totale_positivi[penultimo_indice]);
-   const increment = {
-      nuovi_positivi: nuovi_positiviIncrement,
-      ingressi_terapia_intensiva: ingressi_terapia_intensivaIncrement,
-      variazioni_totale_positivi: variazioni_totale_positiviIncrement
-   };
+      nuovi_positiviIncrement = nuovi_positivi.getIncrement(),
+      ingressi_terapia_intensivaIncrement = ingressi_terapia_intensiva.getIncrement(),
+      variazioni_totale_positiviIncrement = variazioni_totale_positivi.getIncrement();
+   const increment = new Covid19(
+      nuovi_positiviIncrement,
+      ingressi_terapia_intensivaIncrement,
+      variazioni_totale_positiviIncrement
+   );
    return increment;
 };
 
@@ -118,7 +128,7 @@ const tooltipID = 'tooltip-calcoli';
 const BgInfo = 'bg-info';
 
 
-export default calculate;
+export default calculateMinMax;
 
 export {
    arrayFetch,
@@ -126,6 +136,7 @@ export {
    covid19Total,
    covid19Media,
    covid19Increment,
+   tipologie,
    tooltipID,
    BgInfo,
    colors

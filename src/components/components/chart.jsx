@@ -7,8 +7,16 @@ import RadarChart from './components/charts/radarChart';
 import PieChart from './components/charts/pieChart';
 import DoughnutChart from './components/charts/doughnutChart';
 import PolarChart from './components/charts/polarChart';
-import config, { setConfig, isMulticolor, type, tooltipID, default_colors } from './js/chart/index';
-import { arrayFetch, colors } from './js/table_calcoli/index';
+import config, {
+   setConfig,
+   isMulticolor,
+   type, tooltipID,
+   default_colors
+} from './js/chart/index';
+import {
+   arrayFetch,
+   colors
+} from './js/table_calcoli/index';
 import './css/chart/index.css';
 
 
@@ -19,15 +27,15 @@ class Chart extends React.Component {
       this.state = { type: type.bar };
    }
    render() {
+      const type = this.state.type;
       const covid19 = this.props.covid19;
       const dati = arrayFetch(covid19);
       setConfig(dati);
-      const type = this.state.type;
       return (
          <React.StrictMode>
             <div className='col-12 mt-5' id='chart-container'>
                <div className='row'>
-                  <ReactTooltip id={tooltipID} place='top' textColor={default_colors.gold} backgroundColor={default_colors.darkred}>
+                  <ReactTooltip id={tooltipID} textColor={default_colors.gold} backgroundColor={default_colors.darkred} place='top'>
                      Cambia il Tipo di Grafico !
                   </ReactTooltip>
                   <select className='form-control-sm' onChange={e => this.handleSelect(e)} data-tip='' data-for={tooltipID}>
