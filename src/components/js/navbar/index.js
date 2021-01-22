@@ -4,4 +4,5 @@ const nav = {
     target: '_blank'
 };
 
+
 export default nav;

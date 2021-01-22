@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 
-const selector = '#root';
+const rootID = 'root';
 
 const
-   app = <App />,
-   root = document.querySelector(selector);
+   app = (
+      <React.StrictMode>
+         <App />
+      </React.StrictMode>
+   ),
+   root = document.getElementById(rootID);
+
 
 ReactDOM.render(app, root);

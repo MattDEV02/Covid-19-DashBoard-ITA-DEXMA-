@@ -1,9 +1,11 @@
 $pad: 0.7rem;
+$minus_pad: ($pad - 0.2);
+
 
 li {
-    padding: $pad $pad ($pad - 0.2) $pad;
+   padding: $pad $pad $minus_pad;
 }
 
 li:hover {
-    background-color: #00008B;
+   background-color: #00008B; // DarkBlue
 }

@@ -1,16 +1,8 @@
+import getEvent from './utils';
 import {
    formatData
 } from '../table_data/index';
 
-
-const getEvent = data => {
-   const title = 'Variazione < 0';
-   const event = {
-      title: title,
-      date: data
-   };
-   return event;
-};
 
 const getCovid19Date = covid19 => {
    const format = 'YYYY-MM-DD';

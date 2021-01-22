@@ -5,19 +5,27 @@ const
    host = '127.0.0.1',
    port = 8080,
    route = '/covid19/backend/',
-   file = 'index.php',
-   req_parameter = `?days=${days}`; //optional...
+   file = 'index.php', //It Is optional
+   req_parameter = `?days=${days}`;
 
-const endPoint = new String((protocol + '://' + host + ':' + port + route + file + req_parameter));
+const endPoint = new String((protocol + '://' + host + ':' + port + route + file + req_parameter)); // String Casting
 
 const urlRegioni = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json';
 
 const isValidData = data => {
-   const result = ((data !== null) && (data !== undefined) && (data !== '') && (data !== 0) && (data !== false) && (Array.isArray(data)));
+   const result = (
+      (data !== null) &&
+      (data !== undefined) &&
+      (data !== '') &&
+      (data !== 0) &&
+      (data !== false) &&
+      (Array.isArray(data))
+   );
    return result;
 }
 
 const ErrMsg = 'Impossibile caricare l\'Output / Aggiornare lo State';
+
 
 export default endPoint;
 

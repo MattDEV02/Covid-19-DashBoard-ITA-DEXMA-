@@ -2,19 +2,26 @@
    --fc-border-color: #000000;
 }
 
+
+@import '../../../../css/utils/utils';
+
+
+$colors: ('red': $default_red, 'darkred': #820612, 'green': #25AF09, 'black': $default_black);
+
+
 .fc-header-toolbar {
-   background-color: #25AF09;
+   background-color: getColor('green');
 }
 
 .fc-col-header-cell-cushion {
-   color: #820612;
+   color: getColor('darkred');
 }
 
 .fc-daygrid-day-number {
-   color: #D31515;
+   color: getColor('red');
 }
 
 .fc-event-title {
    font-weight: bold;
-   color: #000000;
+   color: getColor('black');
 }

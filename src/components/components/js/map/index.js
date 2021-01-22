@@ -1,6 +1,7 @@
-const colorAxis = {
-   colors: ['#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C', '#BD0026', '#800026']
-};
+import adjustDatiRegioni, {
+   colorAxis
+} from './utils';
+
 
 const options = {
    type: 'GeoChart',
@@ -10,13 +11,6 @@ const options = {
    colorAxis: colorAxis,
    backgroundColor: '#272727',
    datalessRegionColor: 'transparent',
-};
-
-const adjustDatiRegioni = regioni => {
-   const index = 11;
-   const datiTrentino = regioni[index].nuovi_positivi;
-   regioni.splice(index, 1);
-   return datiTrentino;
 };
 
 const getMapData = regioni => {
@@ -39,6 +33,7 @@ const getMapData = regioni => {
    });
    return covid19Regioni;
 };
+
 
 export default options;
 

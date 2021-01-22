@@ -9,8 +9,8 @@ const formatData = (data, format) => { // format is an optional parameter
 };
 
 const percentuale = (n1, n2) => {
-   const div = (n1 / n2);
-   const percent = (div * 100);
+   const division = (n1 / n2);
+   const percent = (division * 100);
    const percentFixed = percent.toFixed(2);
    return percentFixed;
 };
@@ -23,6 +23,7 @@ const tables = {
 const tooltipID = 'data-tab-tooltip';
 
 const calculator = 'fas fa-calculator ml-1';
+
 
 export default tables;
 

@@ -1,11 +1,17 @@
+@import '../../../../css/utils/utils';
+
+
+$colors: ('grey': $default_grey, 'black': $default_black);
+
+
 #chart-container {
-   background-color: #272727;
+   background-color: getColor('grey');
 }
 
 select,
 option {
    font-weight: bold;
-   border: 1px solid #000000;
+   border: 1px solid getColor('black');
 }
 
 select:hover {

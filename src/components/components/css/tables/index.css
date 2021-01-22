@@ -1,9 +1,10 @@
+/* Partial File */
 td {
-  border: 1px solid #0C0C0C;
+  border: 1px solid #000000;
 }
 
 thead {
-  background-color: #0C0C0C;
+  background-color: #000000;
   color: #D10909;
 }
 

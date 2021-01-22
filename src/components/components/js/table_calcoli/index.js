@@ -46,12 +46,21 @@ const calculate = covid19 => {
       maxIngressi_terapia_intensiva = getMin_or_Max(ingressi_terapia_intensiva),
       minVariazioni_totale_positivi = getMin_or_Max(variazioni_totale_positivi, isMinValue),
       maxVariazioni_totale_positivi = getMin_or_Max(variazioni_totale_positivi);
-   const covid19Calculated = {
-      nuovi_positivi: new MinMax(minNuovi_positivi, maxNuovi_positivi),
-      ingressi_terapia_intensiva: new MinMax(minIngressi_terapia_intensiva, maxIngressi_terapia_intensiva),
-      variazioni_totale_positivi: new MinMax(minVariazioni_totale_positivi, maxVariazioni_totale_positivi)
+   const covid19MinMax = {
+      nuovi_positivi: new MinMax(
+         minNuovi_positivi,
+         maxNuovi_positivi
+      ),
+      ingressi_terapia_intensiva: new MinMax(
+         minIngressi_terapia_intensiva,
+         maxIngressi_terapia_intensiva
+      ),
+      variazioni_totale_positivi: new MinMax(
+         minVariazioni_totale_positivi,
+         maxVariazioni_totale_positivi
+      )
    };
-   return covid19Calculated;
+   return covid19MinMax;
 };
 
 const covid19Interval = covid19 => {

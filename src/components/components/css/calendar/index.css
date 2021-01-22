@@ -2,6 +2,7 @@
   --fc-border-color: #000000;
 }
 
+/* Partial File */
 .fc-header-toolbar {
   background-color: #25AF09;
 }
@@ -11,7 +12,7 @@
 }
 
 .fc-daygrid-day-number {
-  color: #D31515;
+  color: #D10909;
 }
 
 .fc-event-title {

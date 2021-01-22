@@ -1,4 +1,8 @@
-$black: #0C0C0C;
+@import '../../../../css/utils/utils';
+
+
+$colors: ('red': $default_red, 'grey': #B1ACAC, 'black': $default_black);
+$black: getColor('black');
 
 
 td {
@@ -7,9 +11,9 @@ td {
 
 thead {
     background-color: $black;
-    color: #D10909;
+    color: getColor('red');
 }
 
 tbody {
-    background-color: #B1ACAC;
+    background-color: getColor('grey');
 }

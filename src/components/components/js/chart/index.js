@@ -47,8 +47,9 @@ const setConfig = dati => {
    const
       labels = dati.date,
       data = dati.nuovi_positivi;
-   config.data.labels = labels;
-   config.data.datasets[0].data = data;
+   const Configdata = config.data;
+   Configdata.labels = labels;
+   Configdata.datasets[0].data = data;
    return config;
 };
 
@@ -63,7 +64,11 @@ const type = { // Like an Enum
 };
 
 const isMulticolor = type => {
-   const result = (type === 'pie' || type === 'doughnut' || type === 'polar');
+   const result = (
+      (type === 'pie') ||
+      (type === 'doughnut') ||
+      (type === 'polar')
+   );
    return result;
 }
 

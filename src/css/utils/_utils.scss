@@ -1,0 +1,13 @@
+/* Partial File */
+
+
+$default_grey: #272727;
+$default_black: #000000;
+$default_red: #D10909;
+
+
+@function getColor($key) {
+   $result: map-get($colors, $key);
+   @debug $result; // Console Output
+   @return $result;
+}
