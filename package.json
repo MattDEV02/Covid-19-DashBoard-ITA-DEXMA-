@@ -44,8 +44,9 @@
       "fetch": "npm install",
       "open_build": "start http://127.0.0.1:5000/",
       "frontend": "npm run build && serve -s build",
-      "backend": "cd  ../../apache/bin && start /B httpd.exe",
-      "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+      "backend": "cd C://xampp/apache/bin && start /B httpd.exe",
+      "dev": "concurrently \"npm run backend\" \"npm start\"",
+      "all": "concurrently \"npm run backend\" \"npm run frontend\""
    },
    "eslintConfig": {
       "extends": [

@@ -4,10 +4,10 @@
 
 ## Description:
 
-At the page loading the Client makes 2 Async HTTP Request with GET method in concurrently at 
+At the page loading the Client makes 2 Async HTTP Request with GET method in concurrently at
 
 http://localhos:8080/covid19/backend and https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json
-, 
+,
 
 If the Request returns an Error we will view an Error message , else we will view the Output Data with tables , charts , calendars , maps...
 
@@ -19,7 +19,7 @@ dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv , puts the cont
 
 Associative-Array (key => Value , the Key is the Column) from which I will take the last 10 elements and finally convert It into a JSON
 
-that will printed with the "echo" keyword. There is also Error prevention both in the frontend and in the backend. 
+that will printed with the "echo" keyword. There is also Error prevention both in the frontend and in the backend.
 
 We can also change the number of the days to view
 
@@ -31,9 +31,7 @@ The layout is responsive.
 
 Try to hover over the items of the Web-App !
 
-
 ### Languages , Framworks , Libraries , Tools used:
-
 
     Back-end:
 
@@ -111,7 +109,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### `npm run backend`
 
-This command will start Apache Web Server in background (this will work only in my PC).
+This command will start Apache Web Server in background.
 
 ### `npm run frontend`
 
@@ -126,6 +124,14 @@ This command will run [`npm install`].
 This command open [http://localhost:5000/](http://127.0.0.1:5000/) with the default broswer.
 
 ### `npm run dev`
+
+It run concurrently this commands:
+
+    1 ) `npm run frontend`.
+
+    2 ) `npm run backend`.
+
+### `npm run all`
 
 This is the most important command , It run concurrently this commands:
 
