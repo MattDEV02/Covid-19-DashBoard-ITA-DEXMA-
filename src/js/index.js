@@ -38,8 +38,7 @@ const isValidData = (...data) => { // destruct operator (ES6)
 }
 
 const fetchCovid19Data = async Obj => {
-   const responses = await
-   Promise.all(requests)
+   const responses = await Promise.all(requests)
       .catch(error => Obj.handleError(error));
    console.log(responses);
    return responses;

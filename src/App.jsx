@@ -19,7 +19,7 @@ class App extends React.Component {
       this.state = { covid19: covid19, regioni: regioni, reqERR: reqERR };
    }
    async componentDidMount() {
-      const responses = await fetchCovid19Data(this);
+      const responses = await fetchCovid19Data(this);  // 2 Async HTTP GET REQUEST IN CONCURRENCY.
       covid19 = responses[0].data;
       regioni = responses[1].data;
       const condition = (isValidData(covid19, regioni));
