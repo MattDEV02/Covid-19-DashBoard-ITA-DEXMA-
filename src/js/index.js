@@ -1,34 +1,17 @@
 import axios from 'axios';
+import isIterable, {
+   protocol,
+   host,
+   port,
+   route,
+   file,
+   req_parameter,
+} from './utils';
 
-
-const days = 10; // We can change this
-
-const
-   protocol = 'http',
-   host = '127.0.0.1',
-   port = 8080,
-   route = '/covid19/backend/',
-   file = 'index.php', //It Is optional
-   req_parameter = `?days=${days}`;
 
 const URL_andamento_nazionale = new String((protocol + '://' + host + ':' + port + route + file + req_parameter)); // String Casting
 
 const URL_andamento_regioni = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json';
-
-const isValidData = (...data) => { // destruct operator (ES6)
-   let result = false;
-   data.map(arg =>
-      result = (
-         (arg !== null) &&
-         (arg !== undefined) &&
-         (arg !== '') &&
-         (arg !== 0) &&
-         (arg !== false) &&
-         (Array.isArray(data))
-      )
-   );
-   return result;
-}
 
 const ErrMsg = 'Impossibile caricare l\'Output / Aggiornare lo State';
 
@@ -38,7 +21,32 @@ const
 
 const requests = [andamentoNazionale, andamentoRegioni];
 
-export default requests;
+const isValidData = (...data) => { // destruct operator (ES6)
+   let results = [];
+   data.map(arg => {
+      results.push(
+         (arg !== null) &&
+         (arg !== undefined) &&
+         (arg !== 0) &&
+         (arg !== false) &&
+         (typeof arg !== 'string') &&
+         (isIterable(arg))
+      );
+   });
+   const result = (!results.includes(false));
+   return result;
+}
+
+const fetchCovid19Data = async Obj => {
+   const responses = await
+   Promise.all(requests)
+      .catch(error => Obj.handleError(error));
+   console.log(responses);
+   return responses;
+};
+
+
+export default fetchCovid19Data;
 
 export {
    isValidData,

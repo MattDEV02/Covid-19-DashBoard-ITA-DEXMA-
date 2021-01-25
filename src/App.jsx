@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './components/navbar';
 import Loading from './components/loading';
 import Body from './components/body';
-import requests, {
+import fetchCovid19Data, {
    isValidData,
    ErrMsg
 } from './js/index';
@@ -18,25 +18,18 @@ class App extends React.Component {
       super();
       this.state = { covid19: covid19, regioni: regioni, reqERR: reqERR };
    }
-   componentDidMount() {
-      const handleError = this.handleError;
-      Promise.all(requests) // 2 Async HTTP GET requests In Concurrency...
-         .then(responses => {
-            console.log(responses);
-            covid19 = responses[0].data;
-            regioni = responses[1].data;
-         })
-         .catch(error => handleError(error))
-         .then(() => {
-            const condition = (isValidData(covid19, regioni));
-            if (condition) {
-               this.getCovid19(covid19);
-               this.getRegioni(regioni);
-            } else {
-               const error = new Error(ErrMsg);
-               handleError(error);
-            }
-         });
+   async componentDidMount() {
+      const responses = await fetchCovid19Data(this);
+      covid19 = responses[0].data;
+      regioni = responses[1].data;
+      const condition = (isValidData(covid19, regioni));
+      if (condition) {
+         this.getCovid19(covid19);
+         this.getRegioni(regioni);
+      } else {
+         const error = new Error(ErrMsg);
+         this.handleError(error);
+      }
    }
    render() {
       const state = this.state;
