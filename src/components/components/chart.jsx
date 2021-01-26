@@ -29,7 +29,7 @@ class Chart extends React.Component {
       this.state = initialState;
    }
    render() {
-      const __type = this.state.type;
+      const stateType = this.state.type;
       const covid19 = this.props.covid19;
       const dati = arrayFetch(covid19);
       setConfig(dati);
@@ -50,12 +50,12 @@ class Chart extends React.Component {
                      <option value={type.polar}>Polare</option>
                   </select>
                   {
-                     __type === type.bar ? <BarChart config={config} /> :
-                        __type === type.horizontalBar ? <HorizontalBarChart config={config} /> :
-                           __type === type.line ? <LinearChart config={config} /> :
-                              __type === type.radar ? <RadarChart config={config} /> :
-                                 __type === type.pie ? <PieChart config={config} /> :
-                                    __type === type.doughnut ? <DoughnutChart config={config} /> :
+                     stateType === type.bar ? <BarChart config={config} /> :
+                        stateType === type.horizontalBar ? <HorizontalBarChart config={config} /> :
+                           stateType === type.line ? <LinearChart config={config} /> :
+                              stateType === type.radar ? <RadarChart config={config} /> :
+                                 stateType === type.pie ? <PieChart config={config} /> :
+                                    stateType === type.doughnut ? <DoughnutChart config={config} /> :
                                        <PolarChart config={config} />
                   }
                </div>
