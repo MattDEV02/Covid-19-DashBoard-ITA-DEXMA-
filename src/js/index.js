@@ -44,11 +44,18 @@ const fetchCovid19Data = async (Obj) => {
    return responses;
 };
 
+const initialState = {
+   covid19: null,
+   regioni: null,
+   reqERR: false
+};
+
 
 export default fetchCovid19Data;
 
 export {
    isValidData,
+   initialState,
    ErrMsg
 };
 

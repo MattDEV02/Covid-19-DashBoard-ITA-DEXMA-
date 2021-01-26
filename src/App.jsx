@@ -4,24 +4,22 @@ import Loading from './components/loading';
 import Body from './components/body';
 import fetchCovid19Data, {
    isValidData,
+   initialState,
    ErrMsg
-} from './js/index';
+} from './js/';
 import './css/index.css';
 
 
-let
-   covid19 = null,
-   regioni = null,
-   reqERR = false;
 class App extends React.Component {
    constructor() {
       super();
-      this.state = { covid19: covid19, regioni: regioni, reqERR: reqERR };
+      this.state = initialState;
    }
    async componentDidMount() {
       const responses = await fetchCovid19Data(this);  // 2 Async HTTP GET REQUEST IN CONCURRENCY.
-      covid19 = responses[0].data;
-      regioni = responses[1].data;
+      const
+         covid19 = responses[0].data,
+         regioni = responses[1].data;
       const condition = (isValidData(covid19, regioni));
       if (condition) {
          this.getCovid19(covid19);

@@ -6,7 +6,7 @@ import {
    covid19Increment,
    tipologie,
    BgInfo
-} from '../js/table_calcoli/index';
+} from '../js/table_calcoli/';
 
 
 class RowsCalcoli extends React.Component {

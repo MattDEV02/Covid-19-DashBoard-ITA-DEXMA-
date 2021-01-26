@@ -2,8 +2,8 @@ import React from 'react';
 import {
    formatData,
    percentuale
-} from '../js/table_data/index';
-import { BgInfo } from '../js/table_calcoli/index';
+} from '../js/table_data/';
+import { BgInfo } from '../js/table_calcoli/';
 
 class RowData extends React.Component {
    constructor(props) {

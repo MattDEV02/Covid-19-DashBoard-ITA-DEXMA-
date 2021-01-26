@@ -1,11 +1,11 @@
-import Covid19, {
+import DatiCovid19, {
    MinMax,
    getMin_or_Max,
    randomColor,
 } from './utils';
 import {
    formatData
-} from '../table_data/index';
+} from '../table_data/';
 
 
 let
@@ -34,7 +34,7 @@ const arrayFetch = dati => {
          colors.push(color);
       });
    }
-   const covid19 = new Covid19(
+   const covid19 = new DatiCovid19(
       nuovi_positivi,
       ingressi_terapia_intensiva,
       variazioni_totale_positivi,
@@ -66,7 +66,7 @@ const calculateMinMax = covid19 => {
          minVariazioni_totale_positivi,
          maxVariazioni_totale_positivi
       );
-   const covid19MinMax = new Covid19(
+   const covid19MinMax = new DatiCovid19(
       nuovi_positiviMinMax,
       ingressi_terapia_intensivaMinMax,
       variazioni_totale_positiviMinMax
@@ -76,10 +76,10 @@ const calculateMinMax = covid19 => {
 
 const covid19Interval = covid19 => {
    const
-      nuovi_positiviDiff = covid19.nuovi_positivi.getInteval(),
-      ingressi_terapia_intensivaDiff = covid19.ingressi_terapia_intensiva.getInteval(),
-      variazioni_totale_positiviDiff = covid19.variazioni_totale_positivi.getInteval();
-   const interval = new Covid19(
+      nuovi_positiviDiff = covid19.nuovi_positivi.getInterval(),
+      ingressi_terapia_intensivaDiff = covid19.ingressi_terapia_intensiva.getInterval(),
+      variazioni_totale_positiviDiff = covid19.variazioni_totale_positivi.getInterval();
+   const interval = new DatiCovid19(
       nuovi_positiviDiff,
       ingressi_terapia_intensivaDiff,
       variazioni_totale_positiviDiff
@@ -92,7 +92,7 @@ const covid19Total = () => {
       nuovi_positiviSum = nuovi_positivi.sum(),
       ingressi_terapia_intensivaSum = ingressi_terapia_intensiva.sum(),
       variazioni_totale_positiviSum = variazioni_totale_positivi.sum();
-   const total = new Covid19(
+   const total = new DatiCovid19(
       nuovi_positiviSum,
       ingressi_terapia_intensivaSum,
       variazioni_totale_positiviSum
@@ -102,7 +102,7 @@ const covid19Total = () => {
 
 const covid19Media = (num, total) => {
    let media = {};
-   for (const property in total) { // for property in Object...
+   for (const property in total) { 
       const result = (total[property] / num);
       const result_fixed = result.toFixed(2);
       media[property] = result_fixed;
@@ -115,7 +115,7 @@ const covid19Increment = () => {
       nuovi_positiviIncrement = nuovi_positivi.getIncrement(),
       ingressi_terapia_intensivaIncrement = ingressi_terapia_intensiva.getIncrement(),
       variazioni_totale_positiviIncrement = variazioni_totale_positivi.getIncrement();
-   const increment = new Covid19(
+   const increment = new DatiCovid19(
       nuovi_positiviIncrement,
       ingressi_terapia_intensivaIncrement,
       variazioni_totale_positiviIncrement

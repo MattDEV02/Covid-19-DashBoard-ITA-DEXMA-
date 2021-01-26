@@ -1,7 +1,6 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
-import options, { getMapData } from './js/map/index';
-
+import options, { getMapData } from './js/map/';
 
 
 class Map extends React.Component {

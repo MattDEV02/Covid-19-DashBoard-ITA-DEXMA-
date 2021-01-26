@@ -10,13 +10,15 @@ import PolarChart from './components/charts/polarChart';
 import config, {
    setConfig,
    isMulticolor,
-   type, tooltipID,
+   type,
+   initialState,
+   tooltipID,
    default_colors
-} from './js/chart/index';
+} from './js/chart/';
 import {
    arrayFetch,
    colors
-} from './js/table_calcoli/index';
+} from './js/table_calcoli/';
 import './css/chart/index.css';
 
 
@@ -24,10 +26,10 @@ import './css/chart/index.css';
 class Chart extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { type: type.bar };
+      this.state = initialState;
    }
    render() {
-      const type = this.state.type;
+      const __type = this.state.type;
       const covid19 = this.props.covid19;
       const dati = arrayFetch(covid19);
       setConfig(dati);
@@ -39,21 +41,21 @@ class Chart extends React.Component {
                      Cambia il Tipo di Grafico !
                   </ReactTooltip>
                   <select className='form-control-sm' onChange={e => this.handleSelect(e)} data-tip='' data-for={tooltipID}>
-                     <option value='bar'>Barre Verticali</option>
-                     <option value='horizontal-bar'>Barre Orizzontali</option>
-                     <option value='line'>Lineare</option>
-                     <option value='radar'>Radar</option>
-                     <option value='pie'>Torta</option>
-                     <option value='doughnut'>Ciambella</option>
-                     <option value='polar'>Polare</option>
+                     <option value={type.bar}>Barre Verticali</option>
+                     <option value={type.horizontalBar}>Barre Orizzontali</option>
+                     <option value={type.line}>Lineare</option>
+                     <option value={type.radar}>Radar</option>
+                     <option value={type.pie}>Torta</option>
+                     <option value={type.doughnut}>Ciambella</option>
+                     <option value={type.polar}>Polare</option>
                   </select>
                   {
-                     type === 'bar' ? <BarChart config={config} /> :
-                        type === 'horizontal-bar' ? <HorizontalBarChart config={config} /> :
-                           type === 'line' ? <LinearChart config={config} /> :
-                              type === 'radar' ? <RadarChart config={config} /> :
-                                 type === 'pie' ? <PieChart config={config} /> :
-                                    type === 'doughnut' ? <DoughnutChart config={config} /> :
+                     __type === type.bar ? <BarChart config={config} /> :
+                        __type === type.horizontalBar ? <HorizontalBarChart config={config} /> :
+                           __type === type.line ? <LinearChart config={config} /> :
+                              __type === type.radar ? <RadarChart config={config} /> :
+                                 __type === type.pie ? <PieChart config={config} /> :
+                                    __type === type.doughnut ? <DoughnutChart config={config} /> :
                                        <PolarChart config={config} />
                   }
                </div>

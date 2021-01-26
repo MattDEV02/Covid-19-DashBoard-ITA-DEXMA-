@@ -72,6 +72,10 @@ const isMulticolor = type => {
    return result;
 }
 
+const initialState = {
+   type: type.bar
+};
+
 const tooltipID = 'select-chart-type';
 
 
@@ -80,6 +84,7 @@ export default config;
 export {
    setConfig,
    isMulticolor,
+   initialState,
    default_colors,
    type,
    tooltipID

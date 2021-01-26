@@ -35,7 +35,7 @@ const getMin_or_Max = (array, isMinValue) => {
    const result = isMinValue ? Math.min(...array) : Math.max(...array);
    return result;
 };
-class Covid19 {
+class DatiCovid19 {
    constructor(nuovi_positivi, ingressi_terapia_intensiva, variazioni_totale_positivi, date) {
       this.nuovi_positivi = nuovi_positivi;
       this.ingressi_terapia_intensiva = ingressi_terapia_intensiva;
@@ -48,14 +48,14 @@ class MinMax {
       this.min = min;
       this.max = max;
    }
-   getInteval() {
+   getInterval = () => {
       const result = (this.max - this.min);
       return result;
    }
 }
 
 
-export default Covid19;
+export default DatiCovid19;
 
 export {
    MinMax,

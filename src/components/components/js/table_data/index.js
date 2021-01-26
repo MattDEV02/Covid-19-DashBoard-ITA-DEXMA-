@@ -1,9 +1,7 @@
 import moment from 'moment';
 
 
-const formatData = (data, format) => { // format is an optional parameter
-   const default_format = 'DD/MM/YYYY';
-   format = format ? format : default_format;
+const formatData = (data, format = 'DD/MM/YYYY') => { // format is an optional parameter with a default value
    const formatted = moment(data).format(format);
    return formatted;
 };

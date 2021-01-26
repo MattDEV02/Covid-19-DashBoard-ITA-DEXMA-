@@ -2,7 +2,7 @@ import React from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import ReactTooltip from 'react-tooltip';
-import getCovid19Date, { tooltipID } from './js/calendar/index';
+import getCovid19Date, { tooltipID } from './js/calendar/';
 import './css/calendar/index.css';
 
 
