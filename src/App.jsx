@@ -30,11 +30,7 @@ class App extends React.Component {
       }
    }
    render() {
-      const state = this.state;
-      const
-         covid19 = state.covid19,
-         regioni = state.regioni,
-         reqERR = state.reqERR;
+      const { covid19, regioni, reqERR } = this.state;
       return (
          <React.StrictMode>
             <Navbar />
