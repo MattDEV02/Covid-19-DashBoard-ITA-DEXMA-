@@ -5,11 +5,7 @@ import './css/navbar/index.css';
 
 class Navbar extends React.Component {
    render() {
-      const {
-         item,
-         brand,
-         target
-      } = nav;
+      const { item, brand, target } = nav;
       return (
          <nav className={nav.bar}>
             <ul className={nav.list}>
