@@ -1,7 +1,7 @@
 import getEvent from './utils';
 import {
    formatData
-} from '../table_data/index';
+} from '../table_data';
 
 
 const getCovid19Date = covid19 => {

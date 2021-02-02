@@ -4,7 +4,7 @@ import RowData from './components/rowData';
 import tables, {
    tooltipID,
    calculator
-} from './js/table_data/';
+} from './js/table_data';
 import './css/tables/index.css';
 
 

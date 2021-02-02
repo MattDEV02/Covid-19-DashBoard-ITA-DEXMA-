@@ -14,11 +14,11 @@ import config, {
    initialState,
    tooltipID,
    default_colors
-} from './js/chart/';
+} from './js/chart';
 import {
    arrayFetch,
    colors
-} from './js/table_calcoli/';
+} from './js/table_calcoli';
 import './css/chart/index.css';
 
 
@@ -67,7 +67,7 @@ class Chart extends React.Component {
       const type = e.target.value;
       let datasets = config.data.datasets[0];
       datasets.backgroundColor = isMulticolor(type) ? colors : default_colors.darkred;
-      const setType = { type: type };
+      const setType = { type };
       this.setState(setType);
    }
 }

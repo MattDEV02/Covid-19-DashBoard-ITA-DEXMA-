@@ -8,7 +8,7 @@ const options = {
    height: '88vh',
    region: 'IT',
    resolution: 'provinces',
-   colorAxis: colorAxis,
+   colorAxis,
    backgroundColor: '#272727',
    datalessRegionColor: 'transparent',
 };

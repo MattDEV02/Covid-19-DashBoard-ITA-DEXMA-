@@ -38,9 +38,9 @@ const options = {
 const height = 141;
 
 const config = {
-   data: data,
-   options: options,
-   height: height
+   data,
+   options,
+   height
 };
 
 const setConfig = dati => {

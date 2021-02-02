@@ -6,7 +6,7 @@ import fetchCovid19Data, {
    isValidData,
    initialState,
    ErrMsg
-} from './js/';
+} from './js';
 import './css/index.css';
 
 

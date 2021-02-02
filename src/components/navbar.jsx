@@ -5,10 +5,11 @@ import './css/navbar/index.css';
 
 class Navbar extends React.Component {
    render() {
-      const
-         item = nav.item,
-         brand = nav.brand,
-         target = nav.target;
+      const {
+         item,
+         brand,
+         target
+      } = nav;
       return (
          <nav className={nav.bar}>
             <ul className={nav.list}>

@@ -9,7 +9,7 @@ const
    req_parameter = `?days=${days}`;
 
 const isIterable = value => {
-   const obj = Object(value);
+   const obj = new Object(value); // Object casting
    const result = (Symbol.iterator in obj);
    return result;
 };

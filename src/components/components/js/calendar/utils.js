@@ -1,8 +1,8 @@
-const getEvent = data => {
+const getEvent = date => {
    const title = 'Variazione < 0';
    const event = {
-      title: title,
-      date: data
+      title,
+      date
    };
    return event;
 };
